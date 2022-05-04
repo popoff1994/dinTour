@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\dinTour.csproj",
+      "projectUniqueName": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj",
       "projectName": "dinTour",
-      "projectPath": "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\dinTour.csproj",
+      "projectPath": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj",
       "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\obj\\",
+      "outputPath": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jonas\\AppData\\Roaming\\NuGet\\NuGet.Config",
