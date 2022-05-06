@@ -81,3 +81,4 @@ C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\dinTo
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\dinTour.genruntimeconfig.cache
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\dinTour.csproj.CopyComplete
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\GetEvents.cshtml.g.cs
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\LogIn\LogOutPage.cshtml.g.cs
