@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MockData\" />
+    <Compile Remove="MockData\**" />
+    <Content Remove="MockData\**" />
+    <EmbeddedResource Remove="MockData\**" />
+    <None Remove="MockData\**" />
   </ItemGroup>
 
 </Project>
