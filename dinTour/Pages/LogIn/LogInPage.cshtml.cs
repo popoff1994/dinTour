@@ -21,7 +21,8 @@ namespace dinTour.Pages.LogIn
 
         private DeltagerService _deltagerService;
 
-        [BindProperty] public string UserName { get; set; }
+        [BindProperty] 
+        public string UserName { get; set; }
 
         [BindProperty, DataType(DataType.Password)]
         public string Password { get; set; }
@@ -42,13 +43,10 @@ namespace dinTour.Pages.LogIn
         public async Task<IActionResult> OnPost()
         {
             List<Deltager> deltagers = _deltagerService.Deltager;
-
-            var passwordHasher = new PasswordHasher<string>();
-            foreach (Models.Deltager deltager in deltagers)
+            foreach (Deltager deltager in deltagers)
             {
-
-                if (UserName == deltager.UserName &&
-                    passwordHasher.VerifyHashedPassword(null, deltager.Password, Password) ==
+                var passwordHasher = new PasswordHasher<string>();
+                if (UserName == deltager.UserName && passwordHasher.VerifyHashedPassword(null, deltager.Password, Password) ==
                     PasswordVerificationResult.Success)
                 {
 
@@ -58,7 +56,7 @@ namespace dinTour.Pages.LogIn
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(claimsIdentity));
-                    return RedirectToPage("/ ");
+                    return RedirectToPage("/Index");
 
                 }
             }

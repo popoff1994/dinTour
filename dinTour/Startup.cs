@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dinTour.Pages;
 using dinTour.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -40,7 +41,7 @@ namespace dinTour
 
             }); services.AddMvc().AddRazorPagesOptions(options => {
 
-                options.Conventions.AuthorizeFolder("/Models");//?
+                options.Conventions.AuthorizeFolder("/GetEvents");
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }

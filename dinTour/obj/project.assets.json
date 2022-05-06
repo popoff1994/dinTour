@@ -8,28 +8,20 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\saims\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Jonas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saims\\Source\\Repos\\dinTour\\dinTour\\dinTour.csproj",
+      "projectUniqueName": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj",
       "projectName": "dinTour",
-      "projectPath": "C:\\Users\\saims\\Source\\Repos\\dinTour\\dinTour\\dinTour.csproj",
-      "packagesPath": "C:\\Users\\saims\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saims\\Source\\Repos\\dinTour\\dinTour\\obj\\",
+      "projectPath": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj",
+      "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\saims\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Jonas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
