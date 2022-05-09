@@ -1,0 +1,66 @@
+﻿@page
+@model dinTour.Pages.Parkering.GetParkeringModel
+@{
+}
+<table>
+    <col style="width: 7%">
+    <col style="width: 74%">
+    <col style="width: 10%">
+    <thead>
+    <tr class="btn-secondary active">
+        <th>
+            <div class="d-flex justify-content-between p-0">
+                <div><h5>Parkerings plads Nr.</h5></div>
+            </div>
+        </th>
+        <th>
+            <div class="d-flex justify-content-between p-0">
+                <div>
+                    <h5>Optaget</h5>
+                </div>
+            </div>
+        </th>
+        <th>
+            <div class="d-flex justify-content-between p-0">
+                <div>
+                    <h5>Pris</h5>
+                </div>
+            </div>
+        </th>
+        <th>
+            <div class="d-flex justify-content-between p-0">
+                <div>
+                    <h5>Actions</h5>
+                </div>
+            </div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (@Model.parkeringspladser != null)
+    {
+        foreach (var item in Model.parkeringspladser)
+        {
+            <tr class="btn-secondary">
+                <td>
+                    @item.ParkeringsNr
+                </td>
+                <td>
+                    @item.Ocupied
+                </td>
+                <td>
+                    @item.Pris
+                </td>
+                <td>
+                    <!-- Call to action buttons -->
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item">
+                            <a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="BookParkering" asp-page="BookParkering" asp-route-id="@item.ParkeringsNr"><i class="fa-solid fa-trash"></i></a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>

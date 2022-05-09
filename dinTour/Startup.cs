@@ -30,6 +30,7 @@ namespace dinTour
         {
             services.AddRazorPages();
             services.AddSingleton<DeltagerService, DeltagerService>();
+            services.AddSingleton<ParkeringService, ParkeringService>();
 
             services.Configure<CookiePolicyOptions>(options => {
                 options.CheckConsentNeeded = context => true;
