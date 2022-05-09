@@ -31,6 +31,15 @@
                         if (Context.User.Identity.Name == null)
                         {
                             <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Login/CreateDeltager">Create User</a>
+                            </li>
+                        }
+
+
+
+                        if (Context.User.Identity.Name == null)
+                        {
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Login/LogInPage">Login</a>
                             </li>
 

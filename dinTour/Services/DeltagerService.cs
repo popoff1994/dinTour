@@ -17,6 +17,13 @@ namespace dinTour.Services
         {
             Deltager = MockDeltager.GetMockDeltager();
         }
+
+        public void AddUser(Deltager user)
+        {
+            Deltager.Add(user);
+            //JsonFileService.SaveJsonObjects(Users);
+            //DbService.AddObjectAsync(user);
+        }
     }
 
 
