@@ -21,11 +21,11 @@ namespace dinTour.Services
             return ParkeringsPladser;
         }
 
-        public Parkering GetParkering(int nr)
+        public Parkering GetParkering(int id)
         {
             foreach (Parkering item in ParkeringsPladser)
             {
-                if (item.ParkeringsNr == nr) return item;
+                if (item.ParkeringsNr == id) return item;
             }
             return null;
         }
