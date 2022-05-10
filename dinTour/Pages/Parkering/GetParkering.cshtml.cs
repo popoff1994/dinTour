@@ -12,6 +12,7 @@ namespace dinTour.Pages.Parkering
     public class GetParkeringModel : PageModel
     {
         private ParkeringService _parkeringService;
+        [BindProperty]
         public List<Models.Parkering> parkeringspladser { get; set; }
         [BindProperty]
         public int ParkeringsNr { get; set; }

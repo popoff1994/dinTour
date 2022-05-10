@@ -1,7 +1,13 @@
 ﻿@page
+@using dinTour.MockData
 @model dinTour.Pages.Parkering.GetParkeringModel
 @{
 }
+@if (Model.Ocupied == false)
+{
+    <p>Antal ledige parkeringspladser @Model.parkeringspladser.Count</p>
+}
+
 <table>
     <col style="width: 7%">
     <col style="width: 74%">
