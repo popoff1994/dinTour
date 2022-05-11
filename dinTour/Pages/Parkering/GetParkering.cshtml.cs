@@ -25,7 +25,7 @@ namespace dinTour.Pages.Parkering
         
         public IActionResult OnGet()
         {
-            parkeringspladser = _parkeringService.GetParkerings();
+            parkeringspladser = _parkeringService.GetParkerings().ToList();
             return Page();
         }
     }

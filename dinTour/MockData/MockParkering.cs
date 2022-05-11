@@ -8,7 +8,7 @@ namespace dinTour.MockData
 {
     public class MockParkering
     {
-        private static List<Parkering> parkering = new List<Parkering>()
+        public static List<Parkering> parkering = new List<Parkering>()
         {
             new Parkering(1, false, 40),
             new Parkering(2, false, 40),
