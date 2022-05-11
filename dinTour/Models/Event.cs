@@ -7,16 +7,22 @@ using System.Threading.Tasks;
 
 namespace dinTour.Models
 {
-    public class Event
+    public class Event <T>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EventId { get; set; }
 
+        public List<Begivenhed> Begivenheder { get; set; }
 
-        public Event(int eventId)
+        public Event()
         {
-            EventId = eventId;
+            
+        }
+
+        public Event(List<Begivenhed> begivenheder)
+        {
+            Begivenheder = begivenheder;
         }
     }
 }

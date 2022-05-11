@@ -15,4 +15,8 @@
     <PackageReference Include="ServiceStack.Interfaces" Version="6.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Events\Begivenheder\" />
+  </ItemGroup>
+
 </Project>
