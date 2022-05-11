@@ -9,13 +9,13 @@ namespace dinTour.Services
 {
     public class MusikTeltService
     {
-        public DBGService<MusikTelt> DbService { get; set; }
+        public DBGService<Begivenhed<MusikTelt>> DbService { get; set; }
 
-        public List<MusikTelt> Artister { get; set; }
+        public List<Begivenhed<MusikTelt>> Artister { get; set; }
 
-        public MusikTeltService(DBGService<MusikTelt> dbService)
+        public MusikTeltService(DBGService<Begivenhed<MusikTelt>> dbService)
         {
-            DbService = dbService;
+            //DbService = dbService;
             Artister = MockMusiktelt.GetAllMusik();
             //Artister = = DbService.GetObjectsAsync().Result.ToList();
             //foreach (MusikTelt artister in Artister)
@@ -24,7 +24,7 @@ namespace dinTour.Services
             //}
         }
 
-        public List<MusikTelt> GetAllArtister()
+        public List<Begivenhed<MusikTelt>> GetAllArtister()
         {
             return Artister;
         }

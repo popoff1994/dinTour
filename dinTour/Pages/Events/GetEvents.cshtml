@@ -3,4 +3,57 @@
 @{
 }
 <h1>Events</h1>
-
+<table>
+    <col style="width: 7%">
+    <col style="width: 74%">
+    <col style="width: 10%">
+    <thead>
+        <tr class="btn-secondary active">
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div><h5>Parkerings plads Nr.</h5></div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Optaget</h5>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Pris</h5>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Actions</h5>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (@Model.Musik != null)
+        {
+            foreach (var item in Model.Musik)
+            {
+                <tr class="btn-secondary">
+                    <td>
+                        @item.Navn
+                    </td>
+                    <td>
+                        @item.Varrighed
+                    </td>
+                    <td>
+                        @item.Location
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

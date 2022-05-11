@@ -12,7 +12,7 @@ namespace dinTour.Pages.Events
     public class OpretBegivenhedModel : PageModel
     {
         private MusikTeltService _musikTeltService;
-        private List<MusikTelt> Artister;
+        private List<Begivenhed<MusikTelt>> Artister;
         [BindProperty]
         public MusikTelt Artist { get; set; }
         public OpretBegivenhedModel(MusikTeltService ms)

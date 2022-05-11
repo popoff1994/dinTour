@@ -33,8 +33,10 @@ namespace dinTour
             services.AddDbContext<dinTourDbContext>();
             services.AddSingleton<DeltagerService, DeltagerService>();
             services.AddSingleton<ParkeringService, ParkeringService>();
+            services.AddSingleton<MusikTeltService, MusikTeltService>();
             services.AddTransient<DBGService<Parkering>, DBGService<Parkering>>();
             services.AddTransient<DBGService<Deltager>, DBGService<Deltager>>();
+            
 
             services.Configure<CookiePolicyOptions>(options => {
                 options.CheckConsentNeeded = context => true;
