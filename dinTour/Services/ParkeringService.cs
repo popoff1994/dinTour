@@ -56,7 +56,6 @@ namespace dinTour.Services
                     if (i.ParkeringsNr == parkering.ParkeringsNr)
                     {
                         i.Ocupied = parkering.Ocupied = true;
-                        break;
                     }
                     DbService.UpdateObjectAsync(parkering);
                 }
