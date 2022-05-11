@@ -11,14 +11,15 @@ namespace dinTour.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public int ParkeringsNr { get; set; }
+        [Required]
         public bool Ocupied { get; set; }
-
+        [Required]
         public int Pris { get; set; }
 
-        public Parkering(int parkeringsNr, bool ocupied, int pris)
+        public Parkering(bool ocupied, int pris)
         {
-            ParkeringsNr = parkeringsNr;
             Ocupied = ocupied;
             Pris = pris;
         }

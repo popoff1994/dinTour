@@ -50,7 +50,7 @@ namespace dinTour.Pages.LogIn
                 return Page();
             }
 
-            _deltagerService.AddUser(new Deltager(DeltagerNr, Name, Tlf, Email, UserName, passwordHasher.HashPassword(null, Password)));
+            _deltagerService.AddUser(new Deltager( Name, Tlf, Email, UserName, passwordHasher.HashPassword(null, Password)));
             return RedirectToPage("/Index");
         }
 

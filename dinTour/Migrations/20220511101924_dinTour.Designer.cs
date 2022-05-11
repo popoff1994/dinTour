@@ -9,7 +9,7 @@ using dinTour.Models;
 namespace dinTour.Migrations
 {
     [DbContext(typeof(dinTourDbContext))]
-    [Migration("20220511085103_dinTour")]
+    [Migration("20220511101924_dinTour")]
     partial class dinTour
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,18 +40,23 @@ namespace dinTour.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tlf")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DeltagerNr");

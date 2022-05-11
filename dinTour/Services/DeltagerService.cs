@@ -17,13 +17,13 @@ namespace dinTour.Services
 
         public DeltagerService(DBGService<Deltager> dbService)
         {
-            Deltager = MockDeltager.GetMockDeltager();
+            //Deltager = MockDeltager.GetMockDeltager();
             DbService = dbService;
-            //Deltager = DbService.GetObjectsAsync().Result.ToList();
-            foreach (var deltager in Deltager)
-            {
-                dbService.AddObjectAsync(deltager);
-            }
+            Deltager = DbService.GetObjectsAsync().Result.ToList();
+            //foreach (var deltager in Deltager)
+            //{
+            //    dbService.AddObjectAsync(deltager);
+            //}
         }
 
         public void AddUser(Deltager user)

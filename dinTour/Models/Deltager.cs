@@ -12,18 +12,19 @@ namespace dinTour.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DeltagerNr { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Tlf { get; set; }
-
+        [Required]
         public string Email { get; set; }
-
+        [Required]
         public string UserName { get; set; }
-
+        [Required]
         public string Password { get; set; }
 
-        public Deltager(int deltagerNr, string name, string tlf, string email, string userName, string password)
+        public Deltager(string name, string tlf, string email, string userName, string password)
         {
-            DeltagerNr = deltagerNr;
             Name = name;
             Tlf = tlf;
             Email = email;
