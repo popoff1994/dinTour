@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 using dinTour.MockData;
 using dinTour.Models;
@@ -15,12 +16,12 @@ namespace dinTour.Services
         public ParkeringService(DBGService<Parkering> dbService)
         {
             ParkeringsPladser = MockParkering.GetMockParkering();
-            //DbService = dbService;
+            DbService = dbService;
             //ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
-            //foreach (Parkering parkering in ParkeringsPladser)
-            //{
-            //    dbService.AddObjectAsync(parkering);
-            //}
+            foreach (Parkering parkering in ParkeringsPladser)
+            {
+                dbService.AddObjectAsync(parkering);
+            }
 
         }
 
@@ -39,6 +40,12 @@ namespace dinTour.Services
             return null;
         }
 
+
+        public void AddParkering(Parkering parkering)
+        {
+            ParkeringsPladser.Add(parkering);
+            DbService.AddObjectAsync(parkering);
+        }
 
         public void BookParkering(Parkering parkering)
         {

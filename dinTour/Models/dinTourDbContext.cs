@@ -10,7 +10,7 @@ namespace dinTour.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-        options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ItemDB; Integrated Security=True; Connect Timeout=30; Encrypt=False");
+        options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=dinTourDB; Integrated Security=True; Connect Timeout=30; Encrypt=False");
         }
 
         public DbSet<Parkering> Parkering { get; set; }

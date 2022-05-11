@@ -30,6 +30,7 @@ namespace dinTour
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddDbContext<dinTourDbContext>();
             services.AddSingleton<DeltagerService, DeltagerService>();
             services.AddSingleton<ParkeringService, ParkeringService>();
             services.AddTransient<DBGService<Parkering>, DBGService<Parkering>>();
