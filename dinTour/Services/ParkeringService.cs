@@ -10,11 +10,20 @@ namespace dinTour.Services
     public class ParkeringService
     {
         public List<Parkering> ParkeringsPladser { get; set; }
+        public DBGService<Parkering> DbService { get; set; }
 
-        public ParkeringService()
+        public ParkeringService(DBGService<Parkering> dbService)
         {
             ParkeringsPladser = MockParkering.GetMockParkering();
+            //DbService = dbService;
+            //ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
+            //foreach (Parkering parkering in ParkeringsPladser)
+            //{
+            //    dbService.AddObjectAsync(parkering);
+            //}
+
         }
+
 
         public List<Parkering> GetParkerings()
         {
@@ -30,23 +39,7 @@ namespace dinTour.Services
             return null;
         }
 
-        //public Parkering BookParkering(int nr)
-        //{
-        //    Parkering parkeringtobebooked = null;
-        //    foreach (Parkering item in ParkeringsPladser)
-        //    {
-        //        if (item.ParkeringsNr == nr)
-        //        {
-        //            parkeringtobebooked = item;
-        //            break;
-        //        }
 
-        //        if (parkeringtobebooked != null)
-        //        {
-        //            parkeringtobebooked.Ocupied = true;
-        //        }
-        //    }
-        //}
         public void BookParkering(Parkering parkering)
         {
             if (parkering != null)
@@ -58,7 +51,7 @@ namespace dinTour.Services
                         i.Ocupied = parkering.Ocupied = true;
                         break;
                     }
-                    
+                    DbService.UpdateObjectAsync(parkering);
                 }
 
             }

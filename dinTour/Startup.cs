@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dinTour.Models;
 using dinTour.Pages;
 using dinTour.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -31,6 +32,8 @@ namespace dinTour
             services.AddRazorPages();
             services.AddSingleton<DeltagerService, DeltagerService>();
             services.AddSingleton<ParkeringService, ParkeringService>();
+            services.AddTransient<DBGService<Parkering>, DBGService<Parkering>>();
+            services.AddTransient<DBGService<Deltager>, DBGService<Deltager>>();
 
             services.Configure<CookiePolicyOptions>(options => {
                 options.CheckConsentNeeded = context => true;

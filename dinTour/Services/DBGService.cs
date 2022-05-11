@@ -32,14 +32,22 @@ namespace dinTour.Services
             }
         }
 
-        public Task AddObjectAsync(T obj)
+        public async Task AddObjectAsync(T obj)
         {
-            throw new NotImplementedException();
+            using (var context = new dinTourDbContext())
+            {
+                context.Set<T>().Add(obj);
+                await context.SaveChangesAsync();
+            }
         }
 
-        public Task DeleteObjectAsync(T obj)
+        public async Task DeleteObjectAsync(T obj)
         {
-            throw new NotImplementedException();
+            using (var context = new dinTourDbContext())
+            {
+                context.Set<T>().Remove(obj);
+                await context.SaveChangesAsync();
+            }
         }
     }
 }
