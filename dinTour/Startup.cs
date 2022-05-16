@@ -31,11 +31,13 @@ namespace dinTour
         {
             services.AddRazorPages();
             services.AddDbContext<dinTourDbContext>();
+
             services.AddSingleton<DeltagerService, DeltagerService>();
             services.AddSingleton<ParkeringService, ParkeringService>();
-            services.AddSingleton<MusikTeltService, MusikTeltService>();
+            services.AddSingleton<BegivenhedService, BegivenhedService>();
             services.AddTransient<DBGService<Parkering>, DBGService<Parkering>>();
             services.AddTransient<DBGService<Deltager>, DBGService<Deltager>>();
+            services.AddTransient<DBGService<Begivenhed>, DBGService<Begivenhed>>();
             
 
             services.Configure<CookiePolicyOptions>(options => {
@@ -48,7 +50,7 @@ namespace dinTour
 
             }); services.AddMvc().AddRazorPagesOptions(options => {
 
-                options.Conventions.AuthorizeFolder("/GetEvents");
+                options.Conventions.AuthorizeFolder("/Events");
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }

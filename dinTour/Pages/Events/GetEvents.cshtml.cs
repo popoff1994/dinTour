@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dinTour.MockData;
 using dinTour.Models;
 using dinTour.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -11,19 +12,19 @@ namespace dinTour.Pages.Events
 {
     public class GetEventsModel : PageModel
     {
-        public List<Begivenhed<MusikTelt>> Musik { get; set; }
+        public List<Begivenhed> Begivenheder { get; set; }
 
-        public MusikTeltService MusikTeltService { get; set; }
 
-        public GetEventsModel(MusikTeltService musikTeltService)
+        public BegivenhedService _begivenhedService;
+
+        public GetEventsModel(BegivenhedService begivenhedService)
         {
-            MusikTeltService = musikTeltService;
+            this._begivenhedService = begivenhedService;
         }
-
 
         public IActionResult OnGet()
         {
-            Musik = MusikTeltService.GetAllArtister().ToList();
+            Begivenheder = _begivenhedService.GetAllBegivenheder().ToList();
             return Page();
         }
     }

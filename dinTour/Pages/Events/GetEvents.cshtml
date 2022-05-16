@@ -2,58 +2,96 @@
 @model dinTour.Pages.Events.GetEventsModel
 @{
 }
-<h1>Events</h1>
-<table>
-    <col style="width: 7%">
-    <col style="width: 74%">
-    <col style="width: 10%">
-    <thead>
-        <tr class="btn-secondary active">
-            <th>
-                <div class="d-flex justify-content-between p-0">
-                    <div><h5>Parkerings plads Nr.</h5></div>
-                </div>
-            </th>
-            <th>
-                <div class="d-flex justify-content-between p-0">
-                    <div>
-                        <h5>Optaget</h5>
-                    </div>
-                </div>
-            </th>
-            <th>
-                <div class="d-flex justify-content-between p-0">
-                    <div>
-                        <h5>Pris</h5>
-                    </div>
-                </div>
-            </th>
-            <th>
-                <div class="d-flex justify-content-between p-0">
-                    <div>
-                        <h5>Actions</h5>
-                    </div>
-                </div>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (@Model.Musik != null)
+
+<h3>Events</h3>
+<div class="container">
+<div class="row">
+    <div class="col-sm-4 shadow-lg bg-light">
+        <h3>MadTelt</h3>
+        @if (@Model.Begivenheder != null)
         {
-            foreach (var item in Model.Musik)
+            foreach (var item in Model.Begivenheder)
             {
-                <tr class="btn-secondary">
-                    <td>
-                        @item.Navn
-                    </td>
-                    <td>
-                        @item.Varrighed
-                    </td>
-                    <td>
-                        @item.Location
-                    </td>
-                </tr>
+                if (item.Location == "MadTelt")
+                {
+                    <div class="card shadow mb-2 mt-1 ym-2"></div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>Navn på begivenhed: @item.Navn</h2>
+                            <h2>Varrighed på begivenheden: @item.Varrighed</h2>
+                        </div>
+                        <div class="card-text">
+                            <p style="font-size: 25px">@item.Beskrivelse</p>
+                        </div>
+                        <div class="card-footer">
+                            <p>PLACEHOLDER</p>
+                        </div>
+                    </div>
+                }
+
             }
+
         }
-    </tbody>
-</table>
+    </div>
+    
+    
+    <div class="col-sm-4 shadow-lg bg-light">
+        <h3>Tribune</h3>
+        @if (@Model.Begivenheder != null)
+        {
+            foreach (var item in Model.Begivenheder)
+            {
+                if (item.Location == "Tribune")
+                {
+                    <div class="card shadow mb-2 mt-1 ym-2"></div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>Navn på begivenhed: @item.Navn</h2>
+                            <h2>Varrighed på begivenheden: @item.Varrighed</h2>
+                        </div>
+                        <div class="card-text">
+                            <p style="font-size: 25px">@item.Beskrivelse</p>
+                        </div>
+                        <div class="card-footer">
+                            <p>PLACEHOLDER</p>
+                        </div>
+                    </div>
+                }
+
+            }
+
+        }
+    </div>
+    
+
+    
+    
+    <div class="col-sm-4 shadow-lg bg-light">
+        <h3>MusikTelt</h3>
+        @if (@Model.Begivenheder != null)
+        {
+            foreach (var item in Model.Begivenheder)
+            {
+                if (item.Location == "MusikTelt")
+                {
+                    <div class="card shadow mb-2 mt-1 ym-2"></div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>Navn på begivenhed: @item.Navn</h2>
+                            <h2>Varrighed på begivenheden: @item.Varrighed</h2>
+                        </div>
+                        <div class="card-text">
+                            <p style="font-size: 25px">@item.Beskrivelse</p>
+                        </div>
+                        <div class="card-footer">
+                            <p>PLACEHOLDER</p>
+                        </div>
+                    </div>
+                }
+
+            }
+
+        }
+    </div>
+</div>
+    </div>

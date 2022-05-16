@@ -15,7 +15,7 @@ namespace dinTour.Models
 
         public DbSet<Parkering> Parkering { get; set; }
         public DbSet<Deltager> Deltagere { get; set; }
-        public DbSet<Begivenhed<MusikTelt>> Begivenheder { get; set; }
+        public DbSet<Begivenhed> Begivenheder { get; set; }
 
         public DbSet<Event> Events { get; set; }
 

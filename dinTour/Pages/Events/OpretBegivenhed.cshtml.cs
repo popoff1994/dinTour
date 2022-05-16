@@ -11,29 +11,29 @@ namespace dinTour.Pages.Events
 {
     public class OpretBegivenhedModel : PageModel
     {
-        private MusikTeltService _musikTeltService;
-        private List<Begivenhed<MusikTelt>> Artister;
-        [BindProperty]
-        public MusikTelt Artist { get; set; }
-        public OpretBegivenhedModel(MusikTeltService ms)
-        {
-            _musikTeltService = ms;
-            Artister = _musikTeltService.GetAllArtister().ToList();
-        }
+        //private MusikTeltService _musikTeltService;
+        //private Begivenhed<MusikTelt> Artister;
+        //[BindProperty]
+        //public MusikTelt Artist { get; set; }
+        //public OpretBegivenhedModel(MusikTeltService ms)
+        //{
+        //    _musikTeltService = ms;
+        //    Artister = _musikTeltService.GetAllArtister().ToList();
+        //}
         
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
+        //public IActionResult OnGet()
+        //{
+        //    return Page();
+        //}
 
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            _musikTeltService.AddArtist(Artist);
-            return RedirectToPage("GetEvents");
-        }
+        //public IActionResult OnPost()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
+        //    _musikTeltService.AddArtist(Artist);
+        //    return RedirectToPage("GetEvents");
+        //}
     }
 }
