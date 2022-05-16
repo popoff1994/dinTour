@@ -22,8 +22,9 @@ namespace dinTour.Pages.Events
             this._begivenhedService = begivenhedService;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
+            Deltager CurrentUser = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
             Begivenheder = _begivenhedService.GetAllBegivenheder().ToList();
             return Page();
         }

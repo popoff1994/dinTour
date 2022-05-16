@@ -31,7 +31,7 @@ namespace dinTour.Services
         public void AddBegivenhed(Begivenhed begivenhed)
         {
             Begivenheder.Add(begivenhed);
-            DbService.AddObjectAsync(begivenhed);
+            //DbService.AddObjectAsync(begivenhed);
         }
     }
     

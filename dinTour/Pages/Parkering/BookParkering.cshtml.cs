@@ -12,7 +12,7 @@ namespace dinTour.Pages.Parkering
     {
         private ParkeringService parkeringService;
         [BindProperty]
-        public Models.Parkering Parkeringspladser { get; set; }
+        public Models.Parkering Parkeringsplads { get; set; }
 
         public BookParkeringModel(ParkeringService parkeringService)
         {
@@ -20,20 +20,21 @@ namespace dinTour.Pages.Parkering
         }
         public IActionResult OnGet(int id)
         {
-            Parkeringspladser = parkeringService.GetParkering(id);
-            if(Parkeringspladser == null)
+            Parkeringsplads = parkeringService.GetParkering(id);
+            if(Parkeringsplads == null)
             {
                 return RedirectToPage("/NotFound"); // mangler implementation
             }
             return Page();
         }
-        public IActionResult OnPost()
+        public IActionResult OnPost(int id)
         {
+            Parkeringsplads = parkeringService.GetParkering(id);
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            parkeringService.BookParkering(Parkeringspladser);
+            parkeringService.BookParkering(Parkeringsplads);
             return RedirectToPage("GetParkering");
         }
 

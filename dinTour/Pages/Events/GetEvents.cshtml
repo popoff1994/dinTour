@@ -4,6 +4,9 @@
 }
 
 <h3>Events</h3>
+<p>
+    <a class="btn btn-primary" data-toggle="tooltip" title="Add Begivenhed" asp-page="/Events/OpretBegivenhed">Opret Begivenhed </a>
+</p>
 <div class="container">
 <div class="row">
     <div class="col-sm-4 shadow-lg bg-light">
@@ -52,6 +55,7 @@
                         <div class="card-text">
                             <p style="font-size: 25px">@item.Beskrivelse</p>
                         </div>
+                        @if(Context.User.Identity.)
                         <div class="card-footer">
                             <p>PLACEHOLDER</p>
                         </div>

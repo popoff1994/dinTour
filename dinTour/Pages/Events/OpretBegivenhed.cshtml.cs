@@ -6,34 +6,42 @@ using dinTour.Models;
 using dinTour.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace dinTour.Pages.Events
 {
     public class OpretBegivenhedModel : PageModel
     {
-        //private MusikTeltService _musikTeltService;
-        //private Begivenhed<MusikTelt> Artister;
-        //[BindProperty]
-        //public MusikTelt Artist { get; set; }
-        //public OpretBegivenhedModel(MusikTeltService ms)
-        //{
-        //    _musikTeltService = ms;
-        //    Artister = _musikTeltService.GetAllArtister().ToList();
-        //}
-        
-        //public IActionResult OnGet()
-        //{
-        //    return Page();
-        //}
+        [BindProperty]
+        public List<Begivenhed> Begivenheder { get; set; }
 
-        //public IActionResult OnPost()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
-        //    _musikTeltService.AddArtist(Artist);
-        //    return RedirectToPage("GetEvents");
-        //}
+        [BindProperty]
+        public Begivenhed Begivenhed { get; set; }
+
+        [BindProperty]
+        public string Location { get; set; }
+
+        public BegivenhedService BegivenhedService { get; set; }
+
+        public OpretBegivenhedModel(BegivenhedService begivenhedService)
+        {
+            BegivenhedService = begivenhedService;
+            Begivenheder = begivenhedService.GetAllBegivenheder().ToList();
+        }
+
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            BegivenhedService.AddBegivenhed(Begivenhed);
+            return RedirectToPage("/Events/GetEvents");
+        }
     }
 }

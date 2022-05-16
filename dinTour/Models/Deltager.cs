@@ -23,6 +23,7 @@ namespace dinTour.Models
         [Required]
         public string Password { get; set; }
 
+        public virtual ICollection<Parkering> Parkering { get; set; }
         public Deltager(string name, string tlf, string email, string userName, string password)
         {
             Name = name;

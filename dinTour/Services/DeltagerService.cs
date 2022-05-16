@@ -12,10 +12,11 @@ namespace dinTour.Services
     {
         public List<Deltager> Deltager { get; set; }
 
-        public DBGService<Deltager> DbService { get; set; }
+        public DBGService<Deltager> DbService2 { get; set; }
 
+        public DeltagerDBService DbService { get; set; }
 
-        public DeltagerService(DBGService<Deltager> dbService)
+        public DeltagerService(DeltagerDBService dbService)
         {
             //Deltager = MockDeltager.GetMockDeltager();
             DbService = dbService;
@@ -30,6 +31,18 @@ namespace dinTour.Services
         {
             Deltager.Add(user);
             DbService.AddObjectAsync(user);
+        }
+
+        public async Task<Deltager> GetParkingByUser(Deltager user)
+        {
+            return DbService.GetParkeringByUserIdAsync(user.DeltagerNr).Result;
+        }
+
+
+        public Deltager GetUserByUserName(string username)
+        {
+            //return DbService.GetObjectByIdAsync(username).Result;
+            return Deltager.Find(user => user.UserName == username);
         }
     }
 
