@@ -14,26 +14,20 @@ namespace dinTour.Pages.Events
     public class GetEventsModel : PageModel
     {
         public List<Begivenhed> Begivenheder { get; set; }
-
-        [BindProperty]
-        public Microsoft.AspNetCore.Http.HttpContext Context { get; }
-
+        
         public DeltagerService DeltagerService { get; set; }
 
         public BegivenhedService _begivenhedService;
 
-        public GetEventsModel(BegivenhedService begivenhedService, HttpContext context)
+        public GetEventsModel(BegivenhedService begivenhedService)
         {
             this._begivenhedService = begivenhedService;
-            Context = context;
         }
 
 
         public async Task<IActionResult> OnGetAsync()
         {
-            Deltager currentUser = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
             Begivenheder = _begivenhedService.GetAllBegivenheder().ToList();
-
             return Page();
         }
     }

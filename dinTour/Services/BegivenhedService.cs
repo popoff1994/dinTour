@@ -16,8 +16,8 @@ namespace dinTour.Services
         public BegivenhedService(DBGService<Begivenhed> dbService)
         {
             DbService = dbService;
-            Begivenheder = MockBegivenheder.GetAllBegivenheder().ToList();
-            //Begivenheder = DbService.GetObjectsAsync().Result.ToList();
+            //Begivenheder = MockBegivenheder.GetAllBegivenheder().ToList();
+            Begivenheder = DbService.GetObjectsAsync().Result.ToList();
             //foreach (var begivenhed in Begivenheder)
             //{
             //    dbService.AddObjectAsync(begivenhed);

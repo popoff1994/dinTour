@@ -15,13 +15,13 @@ namespace dinTour.Services
        public BookningService(DBGService<Bookning> dbService)
        {
           DbService = dbService;
-          //ParkeringList = DbService.GetObjectsAsync().Result.ToList();
+          ParkeringList = DbService.GetObjectsAsync().Result.ToList();
        }
 
        public async void AddBookning(Bookning booking)
        {
           ParkeringList.Add(booking);
-          //await DbService.AddObjectAsync(booking);
+          await DbService.AddObjectAsync(booking);
        }
     }
 }

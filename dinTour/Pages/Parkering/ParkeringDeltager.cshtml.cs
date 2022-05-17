@@ -52,7 +52,7 @@ namespace dinTour.Pages.Parkering
             ParkeringBy.BookingId = Parkering.ParkeringsNr;
             ParkeringBy.Date = DateTime.Now;
             _bookningService.AddBookning(ParkeringBy);
-            return RedirectToPage("../Item/GetAllItems");
+            return RedirectToPage("/GetParkering");
         }
     }
 }

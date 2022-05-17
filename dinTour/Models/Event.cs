@@ -13,12 +13,19 @@ namespace dinTour.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EventId { get; set; }
 
-        
+        public string Navn { get; set; }
+
+        public List<Begivenhed> Begivenheder { get; set; }
+
 
         public Event()
         {
             
         }
 
+        public Event(string navn)
+        {
+            Navn = navn;
+        }
     }
 }
