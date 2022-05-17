@@ -297,3 +297,4 @@ C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\bin\Debug\net5.0\runti
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetEvents.cshtml.g.cs
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\OpretBegivenhed.cshtml.g.cs
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetEventSkema.cshtml.g.cs
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Parkering\ParkeringDeltager.cshtml.g.cs

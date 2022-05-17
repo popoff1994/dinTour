@@ -55,10 +55,12 @@
                         <div class="card-text">
                             <p style="font-size: 25px">@item.Beskrivelse</p>
                         </div>
-                        @if(Context.User.Identity.)
-                        <div class="card-footer">
-                            <p>PLACEHOLDER</p>
-                        </div>
+                        @*@if (HttpContext.User.Identity.Name.Equals("admin"))
+                        {
+                            <div class="card-footer">
+                                <p>PLACEHOLDER</p>
+                            </div>
+                        }*@
                     </div>
                 }
 

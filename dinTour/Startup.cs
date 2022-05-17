@@ -31,13 +31,15 @@ namespace dinTour
         {
             services.AddRazorPages();
             services.AddDbContext<dinTourDbContext>();
-
             services.AddSingleton<DeltagerService, DeltagerService>();
             services.AddSingleton<ParkeringService, ParkeringService>();
             services.AddSingleton<BegivenhedService, BegivenhedService>();
+            services.AddSingleton<BookningService, BookningService>();
             services.AddTransient<DBGService<Parkering>, DBGService<Parkering>>();
-            services.AddTransient<DBGService<Deltager>, DBGService<Deltager>>();
+            //services.AddTransient<DBGService<Deltager>, DBGService<Deltager>>();
             services.AddTransient<DBGService<Begivenhed>, DBGService<Begivenhed>>();
+            services.AddTransient<DBGService<Bookning>, DBGService<Bookning>>();
+            services.AddTransient<DeltagerDBService, DeltagerDBService>();
             
 
             services.Configure<CookiePolicyOptions>(options => {

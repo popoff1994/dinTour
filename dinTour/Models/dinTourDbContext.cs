@@ -19,6 +19,10 @@ namespace dinTour.Models
 
         public DbSet<Event> Events { get; set; }
 
+        public DbSet<Bookning> Booknings { get; set; }
+
+        public DbSet<VIP> VIPs { get; set; }
+
 
 
     }

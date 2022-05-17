@@ -27,10 +27,10 @@ namespace dinTour.Services
             //}
         }
 
-        public void AddUser(Deltager user)
+        public async Task AddUser(Deltager user)
         {
             Deltager.Add(user);
-            DbService.AddObjectAsync(user);
+            await DbService.AddObjectAsync(user);
         }
 
         public async Task<Deltager> GetParkingByUser(Deltager user)
