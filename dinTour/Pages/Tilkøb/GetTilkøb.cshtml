@@ -1,0 +1,41 @@
+﻿@page
+@model dinTour.Pages.Tilkøb.GetTilkøbModel
+@{
+}
+<h1>Tilkøb/VIP</h1>
+<br />
+<div class="test">
+    <table class="table table-bordered table-hover table-striped" width="60%">
+        <col style="width: 7%">
+        <col style="width: 70%">
+        <col style="width: 9%">
+        <col style="width: 14%">
+        <tbody>
+            @if (@Model.VipMenu != null)
+            {
+                foreach (var item in Model.VipMenu)
+                {
+                    <tr class="btn-secondary">
+                        <td>
+                            @item.Menu
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            @item.ChampagneMenu
+                        </td>
+                        <td>
+                            <!-- Call to action buttons -->
+                            <ul class="list-inline m-0">
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Commit" asp-page="EditItem" asp-route-id=""><i class="fa fa-edit"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

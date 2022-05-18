@@ -16,8 +16,8 @@ namespace dinTour.Services
             using (var context = new dinTourDbContext())
             {
                 user = context.Deltagere
-                    .Include(u => u.Parkering)
-                    .ThenInclude(i => i.ParkeringsNr)
+                    .Include(u => u.Bookning)
+                    .ThenInclude(i => i.Parkering)
                     .AsNoTracking()
                     .FirstOrDefault(u => u.DeltagerNr == id);
             }

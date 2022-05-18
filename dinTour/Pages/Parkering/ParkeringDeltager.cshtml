@@ -2,25 +2,63 @@
 @model dinTour.Pages.Parkering.ParkeringDeltagerModel
 @{
 }
-<h1>Create a new Order</h1>
+<br />Optaget parkeringspladser</h1>
+<br />
+<div class="test">
+    <table class="table table-bordered table-hover table-striped" width="60%">
+        <thead>
+            <tr class="btn-secondary active">
+                <th>Booknings NR</th>
+                <th>Booknings Tidspunkt</th>
 
-<div class="row">
-    <div class="col-md-4">
-        <div>
-            User: @Model.Deltager.Name
-        </div>
-        <div>
-            Item: @Model.Parkering.ParkeringsNr
-        </div>
+            </tr>
+        </thead>
+        <tbody>
+            @*@if (@Model.MyOrders != null)
+                {
+                    foreach (var order in Model.MyOrders)
+                    {
+                        <tr class="btn-secondary">
+                            <td>
+                                @order.OrderId
+                            </td>
+                            <td>
+                                @order.Date
+                            </td>
 
+                            <td>
+                                @order.ItemId
+                            </td>
+                            <td>
+                                @order.ItemName
+                            </td>
+                            <td>
+                                @order.Price
+                            </td>
+                            <td>
+                                @order.Count
+                            </td>
+                            <td>
+                                @(order.Count * order.Price)
+                            </td>
+                        </tr>
+                    }
+                }*@
 
-        <form method="post">
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-<div>
-    <a asp-page="../Item/GetAllItems">Back to List</a>
+            @if (@Model.CurrentBookings != null)
+            {
+                foreach (var order in Model.CurrentBookings)
+                {
+                    <tr class="btn-secondary">
+                        <td>
+                            @order.BookingId
+                        </td>
+                        <td>
+                            @order.Date
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
 </div>

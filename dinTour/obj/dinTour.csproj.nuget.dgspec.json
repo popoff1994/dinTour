@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\Documents\\GitHub\\dinTour\\dinTour\\dinTour.csproj": {}
+    "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\Documents\\GitHub\\dinTour\\dinTour\\dinTour.csproj": {
+    "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Documents\\GitHub\\dinTour\\dinTour\\dinTour.csproj",
+        "projectUniqueName": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj",
         "projectName": "dinTour",
-        "projectPath": "C:\\Users\\anton\\Documents\\GitHub\\dinTour\\dinTour\\dinTour.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Documents\\GitHub\\dinTour\\dinTour\\obj\\",
+        "projectPath": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\dinTour.csproj",
+        "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonas\\OneDrive\\Skrivebord\\Github\\dinTour\\dinTour\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }
