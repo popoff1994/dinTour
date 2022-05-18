@@ -8,19 +8,19 @@ namespace dinTour.Services
 {
     public class BookningService
     {
-        public List<Bookning> ParkeringList { get; set; }
+        public List<Bookning> BookningList { get; set; }
 
        public DBGService<Bookning> DbService { get; set; }
 
        public BookningService(DBGService<Bookning> dbService)
        {
           DbService = dbService;
-          ParkeringList = DbService.GetObjectsAsync().Result.ToList();
+          BookningList = DbService.GetObjectsAsync().Result.ToList();
        }
 
        public async void AddBookning(Bookning booking)
        {
-          ParkeringList.Add(booking);
+          BookningList.Add(booking);
           await DbService.AddObjectAsync(booking);
        }
     }

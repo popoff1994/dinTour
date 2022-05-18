@@ -17,10 +17,13 @@ namespace dinTour.Models
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime Date { get; set; }
         [Required]
-        public int DeltagerNr { get; set; }
+        public int DeltagerId { get; set; }
+        
+
         public Deltager Deltager { get; set; }
         [Required]
         public int ParkeringId { get; set; }
+
         public Parkering Parkering { get; set; }
 
         public Bookning()

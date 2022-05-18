@@ -58,10 +58,7 @@ namespace dinTour.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DeltagerNr")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DeltagerNr1")
+                    b.Property<int>("DeltagerId")
                         .HasColumnType("int");
 
                     b.Property<int>("ParkeringId")
@@ -69,7 +66,7 @@ namespace dinTour.Migrations
 
                     b.HasKey("BookingId");
 
-                    b.HasIndex("DeltagerNr1");
+                    b.HasIndex("DeltagerId");
 
                     b.HasIndex("ParkeringId");
 
@@ -78,7 +75,7 @@ namespace dinTour.Migrations
 
             modelBuilder.Entity("dinTour.Models.Deltager", b =>
                 {
-                    b.Property<int>("DeltagerNr")
+                    b.Property<int>("DeltagerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -103,7 +100,7 @@ namespace dinTour.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DeltagerNr");
+                    b.HasKey("DeltagerId");
 
                     b.ToTable("Deltagere");
                 });
@@ -125,13 +122,10 @@ namespace dinTour.Migrations
 
             modelBuilder.Entity("dinTour.Models.Parkering", b =>
                 {
-                    b.Property<int>("ParkeringsNr")
+                    b.Property<int>("ParkeringId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<int?>("DeltagerNr")
-                        .HasColumnType("int");
 
                     b.Property<bool>("Ocupied")
                         .HasColumnType("bit");
@@ -139,9 +133,7 @@ namespace dinTour.Migrations
                     b.Property<int>("Pris")
                         .HasColumnType("int");
 
-                    b.HasKey("ParkeringsNr");
-
-                    b.HasIndex("DeltagerNr");
+                    b.HasKey("ParkeringId");
 
                     b.ToTable("Parkering");
                 });
@@ -153,13 +145,10 @@ namespace dinTour.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Menu1")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("ChampagneMenu")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("Menu2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Menu3")
+                    b.Property<string>("Menu")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Pris")
@@ -180,8 +169,10 @@ namespace dinTour.Migrations
             modelBuilder.Entity("dinTour.Models.Bookning", b =>
                 {
                     b.HasOne("dinTour.Models.Deltager", "Deltager")
-                        .WithMany()
-                        .HasForeignKey("DeltagerNr1");
+                        .WithMany("Bookning")
+                        .HasForeignKey("DeltagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("dinTour.Models.Parkering", "Parkering")
                         .WithMany()
@@ -194,16 +185,9 @@ namespace dinTour.Migrations
                     b.Navigation("Parkering");
                 });
 
-            modelBuilder.Entity("dinTour.Models.Parkering", b =>
-                {
-                    b.HasOne("dinTour.Models.Deltager", null)
-                        .WithMany("Parkering")
-                        .HasForeignKey("DeltagerNr");
-                });
-
             modelBuilder.Entity("dinTour.Models.Deltager", b =>
                 {
-                    b.Navigation("Parkering");
+                    b.Navigation("Bookning");
                 });
 
             modelBuilder.Entity("dinTour.Models.Event", b =>

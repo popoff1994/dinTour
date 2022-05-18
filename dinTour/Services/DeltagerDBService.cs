@@ -19,7 +19,7 @@ namespace dinTour.Services
                     .Include(u => u.Bookning)
                     .ThenInclude(i => i.Parkering)
                     .AsNoTracking()
-                    .FirstOrDefault(u => u.DeltagerNr == id);
+                    .FirstOrDefault(u => u.DeltagerId == id);
             }
             return user;
         }

@@ -11,8 +11,7 @@ namespace dinTour.Pages.Parkering
 {
     public class BookParkeringModel : PageModel
     {
-        private DeltagerService _deltagerService;
-        private ParkeringService parkeringService;
+
         private BookningService _bookningService;
         [BindProperty]
         public Models.Parkering Parkering { get; set; }
@@ -25,13 +24,13 @@ namespace dinTour.Pages.Parkering
 
         public BookParkeringModel(ParkeringService parkeringService, DeltagerService deltagerService, BookningService bookningService)
         {
-            this.parkeringService = parkeringService;
-            this._deltagerService = deltagerService;
+            ParkeringService = parkeringService;
+            DeltagerService = deltagerService;
             this._bookningService = bookningService;
         }
         public IActionResult OnGet(int id)
         {
-            Parkering = parkeringService.GetParkering(id);
+            Parkering = ParkeringService.GetParkering(id);
             Deltager = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
             if (Parkering == null)
             {
@@ -47,11 +46,11 @@ namespace dinTour.Pages.Parkering
             }
             Parkering = ParkeringService.GetParkering(id);
             Deltager = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
-            ParkeringBy.DeltagerNr = Deltager.DeltagerNr;
-            ParkeringBy.BookingId = Parkering.ParkeringsNr;
+            ParkeringBy.DeltagerId = Deltager.DeltagerId;
+            ParkeringBy.ParkeringId = Parkering.ParkeringId;
             ParkeringBy.Date = DateTime.Now;
             _bookningService.AddBookning(ParkeringBy);
-            parkeringService.BookParkering(Parkering);
+            ParkeringService.BookParkering(Parkering);
             return RedirectToPage("/GetParkering");
         }
 

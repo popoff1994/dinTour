@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace dinTour.Pages.Events
 {
-    public class GetEventSkemaModel : PageModel
+    public class GetProgramModel : PageModel
     {
         public void OnGet()
         {

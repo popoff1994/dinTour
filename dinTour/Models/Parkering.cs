@@ -12,7 +12,7 @@ namespace dinTour.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        public int ParkeringsNr { get; set; }
+        public int ParkeringId { get; set; }
         [Required]
         public bool Ocupied { get; set; }
         [Required]

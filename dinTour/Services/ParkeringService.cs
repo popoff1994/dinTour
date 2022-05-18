@@ -15,13 +15,13 @@ namespace dinTour.Services
 
         public ParkeringService(DBGService<Parkering> dbService)
         {
-            //ParkeringsPladser = MockParkering.GetMockParkering();
+            ParkeringsPladser = MockParkering.GetMockParkering();
             DbService = dbService;
-            ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
-            //foreach (Parkering parkering in ParkeringsPladser)
-            //{
-            //    dbService.AddObjectAsync(parkering);
-            //}
+            //ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
+            foreach (Parkering parkering in ParkeringsPladser)
+            {
+                dbService.AddObjectAsync(parkering);
+            }
 
         }
 
@@ -35,17 +35,17 @@ namespace dinTour.Services
         {
             foreach (Parkering item in ParkeringsPladser)
             {
-                if (item.ParkeringsNr == id) return item;
+                if (item.ParkeringId == id) return item;
             }
             return null;
         }
 
 
-        public void AddParkering(Parkering parkering)
-        {
-            ParkeringsPladser.Add(parkering);
-            DbService.AddObjectAsync(parkering);
-        }
+        //public void AddParkering(Parkering parkering)
+        //{
+        //    ParkeringsPladser.Add(parkering);
+        //    DbService.AddObjectAsync(parkering);
+        //}
 
         public void BookParkering(Parkering parkering)
         {
@@ -53,7 +53,7 @@ namespace dinTour.Services
             {
                 foreach (Parkering i in ParkeringsPladser)
                 {
-                    if (i.ParkeringsNr == parkering.ParkeringsNr)
+                    if (i.ParkeringId == parkering.ParkeringId)
                     {
                         i.Ocupied = true;
                         break;

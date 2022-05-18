@@ -5,11 +5,20 @@
 <h1>Tilkøb/VIP</h1>
 <br />
 <div class="test">
-    <table class="table table-bordered table-hover table-striped" width="60%">
+    <table class="table table-bordered table-hover" width="60%">
         <col style="width: 7%">
         <col style="width: 70%">
         <col style="width: 9%">
         <col style="width: 14%">
+        <thead>
+        <tr>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div><h5>Menu</h5></div>
+                </div>
+            </th>
+        </tr>
+        </thead>
         <tbody>
             @if (@Model.VipMenu != null)
             {
@@ -20,16 +29,10 @@
                             @item.Menu
                         </td>
                         <td>
-
-                        </td>
-                        <td>
-                            @item.ChampagneMenu
-                        </td>
-                        <td>
                             <!-- Call to action buttons -->
                             <ul class="list-inline m-0">
                                 <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Commit" asp-page="EditItem" asp-route-id=""><i class="fa fa-edit"></i></a>
+                                    <input type="checkbox" asp-for="@item.ChampagneMenu"/>
                                 </li>
                             </ul>
                         </td>

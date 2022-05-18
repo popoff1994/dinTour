@@ -18,13 +18,13 @@ namespace dinTour.Services
 
         public DeltagerService(DeltagerDBService dbService)
         {
-            //Deltager = MockDeltager.GetMockDeltager();
+            Deltager = MockDeltager.GetMockDeltager();
             DbService = dbService;
-            Deltager = DbService.GetObjectsAsync().Result.ToList();
-            //foreach (var deltager in Deltager)
-            //{
-            //    dbService.AddObjectAsync(deltager);
-            //}
+            //Deltager = DbService.GetObjectsAsync().Result.ToList();
+            foreach (var deltager in Deltager)
+            {
+                dbService.AddObjectAsync(deltager);
+            }
         }
 
         public async Task AddUser(Deltager user)
@@ -35,7 +35,7 @@ namespace dinTour.Services
 
         public async Task<Deltager> GetParkingByUser(Deltager user)
         {
-            return DbService.GetParkeringByUserIdAsync(user.DeltagerNr).Result;
+            return DbService.GetParkeringByUserIdAsync(user.DeltagerId).Result;
         }
 
 

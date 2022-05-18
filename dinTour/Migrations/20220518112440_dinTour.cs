@@ -11,7 +11,7 @@ namespace dinTour.Migrations
                 name: "Deltagere",
                 columns: table => new
                 {
-                    DeltagerNr = table.Column<int>(type: "int", nullable: false)
+                    DeltagerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Tlf = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -21,7 +21,7 @@ namespace dinTour.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Deltagere", x => x.DeltagerNr);
+                    table.PrimaryKey("PK_Deltagere", x => x.DeltagerId);
                 });
 
             migrationBuilder.CreateTable(
@@ -38,40 +38,32 @@ namespace dinTour.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Parkering",
+                columns: table => new
+                {
+                    ParkeringId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ocupied = table.Column<bool>(type: "bit", nullable: false),
+                    Pris = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parkering", x => x.ParkeringId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "VIPs",
                 columns: table => new
                 {
                     VIPNr = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pris = table.Column<int>(type: "int", nullable: false),
-                    Menu1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Menu2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Menu3 = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Menu = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ChampagneMenu = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_VIPs", x => x.VIPNr);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Parkering",
-                columns: table => new
-                {
-                    ParkeringsNr = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Ocupied = table.Column<bool>(type: "bit", nullable: false),
-                    Pris = table.Column<int>(type: "int", nullable: false),
-                    DeltagerNr = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Parkering", x => x.ParkeringsNr);
-                    table.ForeignKey(
-                        name: "FK_Parkering_Deltagere_DeltagerNr",
-                        column: x => x.DeltagerNr,
-                        principalTable: "Deltagere",
-                        principalColumn: "DeltagerNr",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -104,24 +96,23 @@ namespace dinTour.Migrations
                     BookingId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeltagerNr = table.Column<int>(type: "int", nullable: false),
-                    DeltagerNr1 = table.Column<int>(type: "int", nullable: true),
+                    DeltagerId = table.Column<int>(type: "int", nullable: false),
                     ParkeringId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Booknings", x => x.BookingId);
                     table.ForeignKey(
-                        name: "FK_Booknings_Deltagere_DeltagerNr1",
-                        column: x => x.DeltagerNr1,
+                        name: "FK_Booknings_Deltagere_DeltagerId",
+                        column: x => x.DeltagerId,
                         principalTable: "Deltagere",
-                        principalColumn: "DeltagerNr",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "DeltagerId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Booknings_Parkering_ParkeringId",
                         column: x => x.ParkeringId,
                         principalTable: "Parkering",
-                        principalColumn: "ParkeringsNr",
+                        principalColumn: "ParkeringId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -131,19 +122,14 @@ namespace dinTour.Migrations
                 column: "EventId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Booknings_DeltagerNr1",
+                name: "IX_Booknings_DeltagerId",
                 table: "Booknings",
-                column: "DeltagerNr1");
+                column: "DeltagerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Booknings_ParkeringId",
                 table: "Booknings",
                 column: "ParkeringId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Parkering_DeltagerNr",
-                table: "Parkering",
-                column: "DeltagerNr");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -161,10 +147,10 @@ namespace dinTour.Migrations
                 name: "Events");
 
             migrationBuilder.DropTable(
-                name: "Parkering");
+                name: "Deltagere");
 
             migrationBuilder.DropTable(
-                name: "Deltagere");
+                name: "Parkering");
         }
     }
 }

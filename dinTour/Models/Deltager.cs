@@ -11,7 +11,7 @@ namespace dinTour.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int DeltagerNr { get; set; }
+        public int DeltagerId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

@@ -22,7 +22,7 @@ namespace dinTour.Pages.LogIn
         [BindProperty, DataType(DataType.Password)]
         public string Password { get; set; }
 
-        public int DeltagerNr { get; set; }
+        public int DeltagerId { get; set; }
 
         [BindProperty]
         public string Name { get; set; }
