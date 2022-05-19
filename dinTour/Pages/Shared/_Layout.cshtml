@@ -38,6 +38,13 @@
                             </li>
 
                         }
+                        @if (Context.User.Identity.Name != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Tilkøb/GetTilkøb">Bestil Tilkøb</a>
+                            </li>
+
+                        }
                     </ul>
                 </div>
                 <ul class="navbar-nav">

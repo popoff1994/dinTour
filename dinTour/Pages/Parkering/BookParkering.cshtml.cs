@@ -51,7 +51,7 @@ namespace dinTour.Pages.Parkering
             ParkeringBy.Date = DateTime.Now;
             _bookningService.AddBookning(ParkeringBy);
             ParkeringService.BookParkering(Parkering);
-            return RedirectToPage("/GetParkering");
+            return RedirectToPage("/Parkering/GetParkering");
         }
 
     }

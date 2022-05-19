@@ -15,13 +15,13 @@ namespace dinTour.Services
 
         public ParkeringService(DBGService<Parkering> dbService)
         {
-            ParkeringsPladser = MockParkering.GetMockParkering();
+            //ParkeringsPladser = MockParkering.GetMockParkering();
             DbService = dbService;
-            //ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
-            foreach (Parkering parkering in ParkeringsPladser)
-            {
-                dbService.AddObjectAsync(parkering);
-            }
+            ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
+            //foreach (Parkering parkering in ParkeringsPladser)
+            //{
+            //  dbService.AddObjectAsync(parkering);
+            //}
 
         }
 
