@@ -19,7 +19,7 @@ namespace dinTour.Pages.Tilkøb
         [Required]
         public List<VIP> VipMenu { get; set; }
 
-        public GetTilkøbModel(VIPService vipService, DeltagerService deltagerService, TilkøbService tilkøbService)
+        public GetTilkøbModel(VIPService vipService)
         {
             _vipService = vipService;
 

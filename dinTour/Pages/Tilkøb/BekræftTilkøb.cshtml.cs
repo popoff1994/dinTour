@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using dinTour.Models;
 using dinTour.Services;
@@ -20,6 +21,8 @@ namespace dinTour.Pages.Tilkøb
         public VIP Vip { get; set; }
         public Deltager Deltager { get; set; }
         public Models.Tilkøb Tilkøb { get; set; } = new Models.Tilkøb();
+        [BindProperty]
+        public int Count { get; set; }
 
 
 
@@ -30,7 +33,7 @@ namespace dinTour.Pages.Tilkøb
             _tilkøbService = tilkøbService;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
             VipMenu = _vipService.GetAllVIPS().ToList();
             return Page();
@@ -41,12 +44,12 @@ namespace dinTour.Pages.Tilkøb
             {
                 return Page();
             }
-
             Vip = _vipService.GetVIP(id);
             Deltager = _deltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
             Tilkøb.DeltagerId = Deltager.DeltagerId;
             Tilkøb.VIPId = Vip.VIPId;
             Tilkøb.Date = DateTime.Now;
+            Tilkøb.Count = Count;
             _tilkøbService.AddTilkøb(Tilkøb);
             return RedirectToPage("/Tilkøb/GetTilkøb");
         }
