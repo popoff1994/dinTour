@@ -30,7 +30,9 @@ namespace dinTour.Migrations
                 {
                     EventId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Navn = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Navn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,7 +57,7 @@ namespace dinTour.Migrations
                 name: "VIPs",
                 columns: table => new
                 {
-                    VIPNr = table.Column<int>(type: "int", nullable: false)
+                    VIPId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pris = table.Column<int>(type: "int", nullable: false),
                     Menu = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -63,7 +65,7 @@ namespace dinTour.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VIPs", x => x.VIPNr);
+                    table.PrimaryKey("PK_VIPs", x => x.VIPId);
                 });
 
             migrationBuilder.CreateTable(
@@ -116,6 +118,35 @@ namespace dinTour.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Tilkøb",
+                columns: table => new
+                {
+                    TlkøbId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DeltagerId = table.Column<int>(type: "int", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    VIPId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tilkøb", x => x.TlkøbId);
+                    table.ForeignKey(
+                        name: "FK_Tilkøb_Deltagere_DeltagerId",
+                        column: x => x.DeltagerId,
+                        principalTable: "Deltagere",
+                        principalColumn: "DeltagerId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Tilkøb_VIPs_VIPId",
+                        column: x => x.VIPId,
+                        principalTable: "VIPs",
+                        principalColumn: "VIPId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Begivenheder_EventId",
                 table: "Begivenheder",
@@ -130,6 +161,16 @@ namespace dinTour.Migrations
                 name: "IX_Booknings_ParkeringId",
                 table: "Booknings",
                 column: "ParkeringId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tilkøb_DeltagerId",
+                table: "Tilkøb",
+                column: "DeltagerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tilkøb_VIPId",
+                table: "Tilkøb",
+                column: "VIPId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -141,16 +182,19 @@ namespace dinTour.Migrations
                 name: "Booknings");
 
             migrationBuilder.DropTable(
-                name: "VIPs");
+                name: "Tilkøb");
 
             migrationBuilder.DropTable(
                 name: "Events");
 
             migrationBuilder.DropTable(
+                name: "Parkering");
+
+            migrationBuilder.DropTable(
                 name: "Deltagere");
 
             migrationBuilder.DropTable(
-                name: "Parkering");
+                name: "VIPs");
         }
     }
 }

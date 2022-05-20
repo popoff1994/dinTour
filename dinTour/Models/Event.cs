@@ -15,6 +15,10 @@ namespace dinTour.Models
 
         public string Navn { get; set; }
 
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
+
         public List<Begivenhed> Begivenheder { get; set; }
 
 
@@ -23,9 +27,12 @@ namespace dinTour.Models
             
         }
 
-        public Event(string navn)
+        public Event(string navn, DateTime startTime, DateTime endTime, List<Begivenhed> begivenheder)
         {
             Navn = navn;
+            StartTime = startTime;
+            EndTime = endTime;
+            Begivenheder = begivenheder;
         }
     }
 }

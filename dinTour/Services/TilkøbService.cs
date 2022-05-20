@@ -19,7 +19,7 @@ namespace dinTour.Services
             TilkøbsList = DbService.GetObjectsAsync().Result.ToList();
         }
 
-        public async void AddOrder(Tilkøb tilkøb)
+        public async void AddTilkøb(Tilkøb tilkøb)
         {
             TilkøbsList.Add(tilkøb);
             await DbService.AddObjectAsync(tilkøb);

@@ -565,3 +565,4 @@ C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.dll
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\ref\dinTour.dll
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.pdb
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.genruntimeconfig.cache
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\BekræftTilkøb.cshtml.g.cs

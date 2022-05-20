@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dinTour.MockData;
 using dinTour.Models;
 
 namespace dinTour.Services
@@ -25,6 +26,14 @@ namespace dinTour.Services
         public List<VIP> GetAllVIPS()
         {
             return VIPMenu;
+        }
+        public VIP GetVIP(int id)
+        {
+            foreach (VIP vip in VIPMenu)
+            {
+                if (vip.VIPId == id) return vip;
+            }
+            return null;
         }
     }
 }

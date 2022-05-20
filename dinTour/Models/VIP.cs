@@ -12,7 +12,7 @@ namespace dinTour.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int VIPNr { get; set; }
+        public int VIPId { get; set; }
         public int Pris { get; set; }
         public string Menu { get; set; }
 

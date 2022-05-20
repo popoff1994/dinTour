@@ -112,8 +112,14 @@ namespace dinTour.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Navn")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("EventId");
 
@@ -138,9 +144,40 @@ namespace dinTour.Migrations
                     b.ToTable("Parkering");
                 });
 
+            modelBuilder.Entity("dinTour.Models.Tilkøb", b =>
+                {
+                    b.Property<int>("TlkøbId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeltagerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VIPId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TlkøbId");
+
+                    b.HasIndex("DeltagerId");
+
+                    b.HasIndex("VIPId");
+
+                    b.ToTable("Tilkøb");
+                });
+
             modelBuilder.Entity("dinTour.Models.VIP", b =>
                 {
-                    b.Property<int>("VIPNr")
+                    b.Property<int>("VIPId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -154,7 +191,7 @@ namespace dinTour.Migrations
                     b.Property<int>("Pris")
                         .HasColumnType("int");
 
-                    b.HasKey("VIPNr");
+                    b.HasKey("VIPId");
 
                     b.ToTable("VIPs");
                 });
@@ -183,6 +220,25 @@ namespace dinTour.Migrations
                     b.Navigation("Deltager");
 
                     b.Navigation("Parkering");
+                });
+
+            modelBuilder.Entity("dinTour.Models.Tilkøb", b =>
+                {
+                    b.HasOne("dinTour.Models.Deltager", "Deltager")
+                        .WithMany()
+                        .HasForeignKey("DeltagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dinTour.Models.VIP", "Vip")
+                        .WithMany()
+                        .HasForeignKey("VIPId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deltager");
+
+                    b.Navigation("Vip");
                 });
 
             modelBuilder.Entity("dinTour.Models.Deltager", b =>

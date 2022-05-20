@@ -6,6 +6,7 @@ using dinTour.Models;
 using dinTour.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ServiceStack.DataAnnotations;
 
 namespace dinTour.Pages.Tilkøb
 {
@@ -13,33 +14,21 @@ namespace dinTour.Pages.Tilkøb
     {
         private VIPService _vipService;
 
+
+        
+        [Required]
         public List<VIP> VipMenu { get; set; }
 
-
-        public GetTilkøbModel(VIPService vipService)
+        public GetTilkøbModel(VIPService vipService, DeltagerService deltagerService, TilkøbService tilkøbService)
         {
             _vipService = vipService;
+
         }
 
         public IActionResult OnGet()
         {
             VipMenu = _vipService.GetAllVIPS().ToList();
             return Page();
-        }
-        public IActionResult OnPost(int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            Parkering = ParkeringService.GetParkering(id);
-            Deltager = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
-            ParkeringBy.DeltagerId = Deltager.DeltagerId;
-            ParkeringBy.ParkeringId = Parkering.ParkeringId;
-            ParkeringBy.Date = DateTime.Now;
-            _bookningService.AddBookning(ParkeringBy);
-            ParkeringService.BookParkering(Parkering);
-            return RedirectToPage("/Parkering/GetParkering");
         }
     }
 }

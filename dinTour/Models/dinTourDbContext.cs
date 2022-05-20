@@ -21,6 +21,8 @@ namespace dinTour.Models
 
         public DbSet<Bookning> Booknings { get; set; }
 
+        public DbSet<Tilkøb> Tilkøb { get; set; }
+
         public DbSet<VIP> VIPs { get; set; }
 
 

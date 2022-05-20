@@ -61,11 +61,14 @@
                 </td>
                 <td>
                     <!-- Call to action buttons -->
-                    <ul class="list-inline m-0">
-                        <li class="list-inline-item">
-                            <a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="BookParkering" asp-page="BookParkering" asp-route-id="@item.ParkeringId"><i class="fa-solid fa-trash"></i></a>
-                        </li>
-                    </ul>
+                    @if (item.Ocupied == false)
+                    {
+                        <ul class="list-inline m-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="BookParkering" asp-page="BookParkering" asp-route-id="@item.ParkeringId"><i class="fa-solid fa-trash"></i></a>
+                            </li>
+                        </ul>
+                    }
                 </td>
             </tr>
         }
