@@ -20,7 +20,7 @@ namespace dinTour.Services
             ParkeringsPladser = DbService.GetObjectsAsync().Result.ToList();
             //foreach (Parkering parkering in ParkeringsPladser)
             //{
-            //  dbService.AddObjectAsync(parkering);
+            //    dbService.AddObjectAsync(parkering);
             //}
 
         }

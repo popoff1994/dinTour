@@ -18,6 +18,7 @@ namespace dinTour.Models
         public DateTime Date { get; set; }
         [Required]
         public int DeltagerId { get; set; }
+
         
 
         public Deltager Deltager { get; set; }

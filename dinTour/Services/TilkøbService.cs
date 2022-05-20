@@ -9,24 +9,20 @@ namespace dinTour.Services
 {
     public class TilkøbService
     {
-        public List<VIP> VIPMenu { get; set; }
+        public List<Tilkøb> TilkøbsList { get; set; }
 
-        public DBGService<VIP> DBService { get; set; }
+        public DBGService<Tilkøb> DbService { get; set; }
 
-        public TilkøbService(DBGService<VIP> dbService)
+        public TilkøbService(DBGService<Tilkøb> dbService)
         {
-            VIPMenu = MockVIP.GetVipMenu().ToList();
-            DBService = dbService;
-            //VIPMenu = DBService.GetObjectsAsync().Result.ToList();
-            foreach (var vip in VIPMenu)
-            {
-                dbService.AddObjectAsync(vip);
-            }
-        }
-        public List<VIP> GetAllVIPS()
-        {
-            return VIPMenu;
+            DbService = dbService;
+            TilkøbsList = DbService.GetObjectsAsync().Result.ToList();
         }
 
+        public async void AddOrder(Tilkøb tilkøb)
+        {
+            TilkøbsList.Add(tilkøb);
+            await DbService.AddObjectAsync(tilkøb);
+        }
     }
 }

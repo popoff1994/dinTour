@@ -13,19 +13,24 @@ namespace dinTour.Pages.Parkering
     {
 
         public DeltagerService DeltagerService { get; set; }
+        public BookningService BookningService { get; set; }
+
 
         //public IEnumerable<OrderDAO> MyOrders { get; set; }
         public IEnumerable<Models.Bookning> CurrentBookings { get; set; }
 
-        public ParkeringDeltagerModel(DeltagerService deltagerService)
+        public ParkeringDeltagerModel(DeltagerService deltagerService, BookningService bookningService)
         {
             DeltagerService = deltagerService;
+            BookningService = bookningService;
+
         }
         public async Task<IActionResult> OnGetAsync()
         {
-            Deltager CurrentUser = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
+            CurrentBookings = BookningService.BookningList.ToList();
+            //Deltager CurrentUser = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
             //MyOrders = UserService.GetUserOrders(CurrentUser);
-            CurrentBookings = DeltagerService.GetParkingByUser(CurrentUser).Result.Bookning;
+            //CurrentBookings = DeltagerService.GetParkingByUser(CurrentUser).Result.Bookning;
             return Page();
         }
     }

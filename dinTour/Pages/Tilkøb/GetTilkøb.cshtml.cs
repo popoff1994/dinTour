@@ -11,20 +11,35 @@ namespace dinTour.Pages.Tilkøb
 {
     public class GetTilkøbModel : PageModel
     {
-        private TilkøbService _tilkøbService;
+        private VIPService _vipService;
 
         public List<VIP> VipMenu { get; set; }
 
 
-        public GetTilkøbModel(TilkøbService tilkøbService)
+        public GetTilkøbModel(VIPService vipService)
         {
-            _tilkøbService = tilkøbService;
+            _vipService = vipService;
         }
 
         public IActionResult OnGet()
         {
-            VipMenu = _tilkøbService.GetAllVIPS().ToList();
+            VipMenu = _vipService.GetAllVIPS().ToList();
             return Page();
+        }
+        public IActionResult OnPost(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            Parkering = ParkeringService.GetParkering(id);
+            Deltager = DeltagerService.GetUserByUserName(HttpContext.User.Identity.Name);
+            ParkeringBy.DeltagerId = Deltager.DeltagerId;
+            ParkeringBy.ParkeringId = Parkering.ParkeringId;
+            ParkeringBy.Date = DateTime.Now;
+            _bookningService.AddBookning(ParkeringBy);
+            ParkeringService.BookParkering(Parkering);
+            return RedirectToPage("/Parkering/GetParkering");
         }
     }
 }
