@@ -16,19 +16,21 @@ namespace dinTour.Models
         public int BegivenhedId { get; set; }
 
         public string Navn { get; set; }
-        public int Varrighed { get; set; }
+
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public string Location { get; set; }
 
         public string Beskrivelse { get; set; }
 
 
 
-        public Begivenhed(string navn, int varrighed, string location, string beskrivelse)
+        public Begivenhed(string navn, string location, DateTime startTime, DateTime endTime)
         {
             Navn = navn;
-            Varrighed = varrighed;
+            StartTime = startTime;
+            EndTime = endTime;
             Location = location;
-            Beskrivelse = beskrivelse;
         }
 
         public Begivenhed()

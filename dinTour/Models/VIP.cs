@@ -16,8 +16,6 @@ namespace dinTour.Models
         public int Pris { get; set; }
         public string Menu { get; set; }
 
-        public bool ChampagneMenu { get; set; }
-
         public VIP(int pris, string menu)
         {
             Pris = pris;

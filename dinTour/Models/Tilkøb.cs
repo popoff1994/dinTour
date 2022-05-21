@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace dinTour.Models
@@ -27,6 +28,8 @@ namespace dinTour.Models
         [Required]
         public int VIPId { get; set; }
 
+        public bool ChampagneMenu { get; set; }
+
         public VIP Vip { get; set; }
 
         public Tilkøb()
@@ -34,11 +37,12 @@ namespace dinTour.Models
 
         }
 
-        public Tilkøb(Deltager deltager, VIP vip)
+        public Tilkøb(Deltager deltager, VIP vip, int count)
         {
             Date = DateTime.Now;
             Deltager = deltager;
             Vip = vip;
+            Count = count;
         }
 
 

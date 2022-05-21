@@ -6,7 +6,15 @@
 <div class="alert alert-danger">
     <h5>Ønsker du at bestille VIP menu @Model.Tilkøb.VIPId</h5>
     <form method="post">
-        <button type="submit" class="btn btn-danger">Yes</button>
-        <a class="btn btn-primary" asp-page="/Tilkøb/GetTilkøb">No</a>
+        Count: 
+        <input asp-for="@Model.Count" class="form-control"/>
+        <div class="form-group">
+            <input type="checkbox" asp-for="Vip.ChampagneMenu"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary"/>
+        </div>
     </form>
+ 
+    <a class="btn btn-primary" asp-page="/Tilkøb/GetTilkøb">No</a>
 </div>

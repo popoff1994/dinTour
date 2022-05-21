@@ -24,6 +24,7 @@ namespace dinTour.Models
         public string Password { get; set; }
 
         public virtual ICollection<Bookning> Bookning { get; set; }
+        public virtual ICollection<Tilkøb> Tilkøb { get; set; }
         public Deltager(string name, string tlf, string email, string userName, string password)
         {
             Name = name;

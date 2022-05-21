@@ -23,5 +23,19 @@ namespace dinTour.Services
             }
             return user;
         }
+        public async Task<Deltager> GetTilkøbByUserIdAsync(int id)
+        {
+            Deltager user;
+
+            using (var context = new dinTourDbContext())
+            {
+                user = context.Deltagere
+                    .Include(u => u.Tilkøb)
+                    .ThenInclude(i => i.Vip)
+                    .AsNoTracking()
+                    .FirstOrDefault(u => u.DeltagerId == id);
+            }
+            return user;
+        }
     }
 }

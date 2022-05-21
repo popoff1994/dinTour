@@ -14,6 +14,7 @@ namespace dinTour.Pages.Tilkøb
     {
         private VIPService _vipService;
 
+        public int Count { get; set; }
 
         
         [Required]
@@ -25,7 +26,7 @@ namespace dinTour.Pages.Tilkøb
 
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
             VipMenu = _vipService.GetAllVIPS().ToList();
             return Page();

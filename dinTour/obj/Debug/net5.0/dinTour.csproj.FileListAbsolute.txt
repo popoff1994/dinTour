@@ -192,7 +192,6 @@ C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\dinTour.TagHelpers.
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\dinTour.TagHelpers.output.cache
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\dinTour.RazorCoreGenerate.cache
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\GetEvents.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\LogIn\CreateDeltager.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\LogIn\LogInPage.cshtml.g.cs
@@ -566,3 +565,10 @@ C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\ref\dinTour.d
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.pdb
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.genruntimeconfig.cache
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\BekræftTilkøb.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetEvents.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetProgram.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\OpretBegivenhed.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Forside.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Parkering\ParkeringDeltager.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\BekræftTilkøb.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\GetTilkøb.cshtml.g.cs
