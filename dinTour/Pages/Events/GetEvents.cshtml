@@ -24,7 +24,8 @@
                     <div class="card-body">
                         <div class="card-title">
                             <h4>Navn på begivenhed: @item.Navn</h4>
-                            <h4>Begivenheden Starter kl: @item.StartTime</h4>
+                            <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
+                            <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
                         </div>
                         <div class="card-text">
                             <p style="font-size: 25px">@item.Beskrivelse</p>
@@ -32,7 +33,7 @@
                         @if (HttpContext.User.Identity.Name.Equals("admin"))
                         {
                             <div class="card-footer">
-                                <p>PLACEHOLDER</p>
+                                <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
                             </div>
                         }
                     </div>
@@ -56,7 +57,8 @@
                     <div class="card-body">
                         <div class="card-title">
                             <h4>Navn på begivenhed: @item.Navn</h4>
-                            <h4>Begivenheden Starter kl: @item.StartTime</h4>
+                            <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
+                            <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
                         </div>
                         <div class="card-text">
                             <p style="font-size: 25px">@item.Beskrivelse</p>
@@ -64,7 +66,7 @@
                         @if (HttpContext.User.Identity.Name.Equals("admin"))
                         {
                             <div class="card-footer">
-                                <p>PLACEHOLDER</p>
+                                <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
                             </div>
                         }
                     </div>
@@ -91,7 +93,8 @@
                         <div class="card-title">
                             <h4>Navn på begivenhed: @item.Navn</h4>
 
-                            <h4>Begivenheden Starter kl: @item.StartTime</h4>
+                            <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
+                            <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
                         </div>
                         <div class="card-text">
                             <p style="font-size: 25px">@item.Beskrivelse</p>
@@ -99,7 +102,7 @@
                         @if (HttpContext.User.Identity.Name.Equals("admin"))
                         {
                             <div class="card-footer">
-                                <p>PLACEHOLDER</p>
+                                <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
                             </div>
                         }
                     </div>

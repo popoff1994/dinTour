@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using dinTour.MockData;
 using dinTour.Models;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace dinTour.Services
 {
@@ -23,9 +24,20 @@ namespace dinTour.Services
             //    dbService.AddObjectAsync(begivenhed);
             //}
         }
+
         public List<Begivenhed> GetAllBegivenheder()
         {
             return Begivenheder;
+        }
+
+        public Begivenhed GetBegivenhed(int id)
+        {
+            foreach (Begivenhed begivenhed in Begivenheder)
+            {
+                if (begivenhed.BegivenhedId == id) return begivenhed;
+            }
+
+            return null;
         }
 
         public void AddBegivenhed(Begivenhed begivenhed)
@@ -33,6 +45,17 @@ namespace dinTour.Services
             Begivenheder.Add(begivenhed);
             DbService.AddObjectAsync(begivenhed);
         }
+
+        public async Task DeleteBegivenhedAsync(int begivId)
+        {
+            Begivenhed begivenhedToBeDeleted = Begivenheder.Find(begivenhed => begivenhed.BegivenhedId == begivId);
+            if (begivenhedToBeDeleted != null)
+            {
+                Begivenheder.Remove(begivenhedToBeDeleted);
+                //JsonFileService.SaveJsonObjects(items);
+                await DbService.DeleteObjectAsync(begivenhedToBeDeleted);
+            }
+
+        }
     }
-    
 }

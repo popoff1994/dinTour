@@ -45,6 +45,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Parkering/ParkeringDeltager">Optaget Parkeringspladser</a>
                         </li>
                         }
+                        @if (Context.User.Identity.Name != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Tilkøb/DeltagerTilkøb">Dine tilkøb</a>
+                            </li>
+
+                        }
                     </ul>
                 </div>
                 <ul class="navbar-nav">

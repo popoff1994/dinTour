@@ -37,6 +37,10 @@ namespace dinTour.Services
         {
             return DbService.GetParkeringByUserIdAsync(user.DeltagerId).Result;
         }
+        public async Task<Deltager> GetTilkøbByUser(Deltager user)
+        {
+            return DbService.GetTilkøbByUserIdAsync(user.DeltagerId).Result;
+        }
 
 
         public Deltager GetUserByUserName(string username)

@@ -26,6 +26,8 @@ namespace dinTour.Pages.Tilkøb
         [BindProperty]
         public bool ChampagneMenu { get; set; }
 
+        public string Name { get; set; }
+
         public BekræftTilkøbModel(VIPService vipService, DeltagerService deltagerService, TilkøbService tilkøbService)
         {
             _vipService = vipService;
@@ -50,6 +52,7 @@ namespace dinTour.Pages.Tilkøb
             Tilkøb.VIPId = Vip.VIPId;
             Tilkøb.Date = DateTime.Now;
             Tilkøb.Count = Count;
+            Tilkøb.Name = Deltager.Name;
             Tilkøb.ChampagneMenu = ChampagneMenu;
             _tilkøbService.AddTilkøb(Tilkøb);
             return RedirectToPage("/Tilkøb/GetTilkøb");

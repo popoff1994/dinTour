@@ -1,0 +1,84 @@
+﻿@page
+@model dinTour.Pages.Tilkøb.DeltagerTilkøbModel
+@{
+}
+<h1>Dine Bestillinger</h1>
+<br />
+<p style="font-size: 25px; color: red" >Vær opmærksom på betaling først bliver opkrævet ved entre af eventet.</p>
+
+<h5>Din bookning af parkeringsplads</h5>
+<div class="test">
+    <table class="table table-bordered table-hover" width="60%">
+        <thead>
+        <tr class="btn-secondary active">
+            <th>Booknings Id</th>
+            <th>Parkeringsplads nummer </th>
+            <th>Dit DeltagerId</th>
+            <th>Booknings Tidspunkt</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (@Model.CurrentBookings != null)
+        {
+            foreach (var order in Model.CurrentBookings)
+            {
+                <tr class="btn-secondary">
+                    <td>
+                        @order.BookingId
+                    </td>
+                    <td>
+                        @order.ParkeringId
+                    </td>
+                    <td>@order.DeltagerId</td>
+                    <td>
+                        @order.Date
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>
+
+<h5>Din menu bestillinger.</h5>
+<div class="test">
+    <table class="table table-bordered table-hover" width="60%">
+        <thead>
+            <tr class="btn-secondary active">
+                <th>Tilkøbs Id</th>
+                <th>Menu Id</th>
+                <th>Dit DeltagerId</th>
+                <th>Dit Navn</th>
+                <th>Antal</th>
+                <th>Champagne Menu</th>
+                <th>Bestillings Tidspunkt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (@Model.CurrentBookings != null)
+            {
+                foreach (var order in Model.CurrentTilkøb)
+                {
+                    <tr class="btn-secondary">
+                        <td>
+                            @order.TlkøbId
+                        </td>
+                        <td>
+                            @order.VIPId
+                        </td>
+                        <td>@order.DeltagerId
+                        </td>
+                        <td>@order.Name
+                        </td>
+                        <td>@order.Count
+                        </td>
+                        <td>@order.ChampagneMenu</td>
+                        <td>
+                            @order.Date
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
