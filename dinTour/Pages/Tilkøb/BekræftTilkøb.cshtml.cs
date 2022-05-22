@@ -23,8 +23,8 @@ namespace dinTour.Pages.Tilkøb
         public Models.Tilkøb Tilkøb { get; set; } = new Models.Tilkøb();
         [BindProperty]
         public int Count { get; set; }
-
-
+        [BindProperty]
+        public bool ChampagneMenu { get; set; }
 
         public BekræftTilkøbModel(VIPService vipService, DeltagerService deltagerService, TilkøbService tilkøbService)
         {
@@ -50,6 +50,7 @@ namespace dinTour.Pages.Tilkøb
             Tilkøb.VIPId = Vip.VIPId;
             Tilkøb.Date = DateTime.Now;
             Tilkøb.Count = Count;
+            Tilkøb.ChampagneMenu = ChampagneMenu;
             _tilkøbService.AddTilkøb(Tilkøb);
             return RedirectToPage("/Tilkøb/GetTilkøb");
         }

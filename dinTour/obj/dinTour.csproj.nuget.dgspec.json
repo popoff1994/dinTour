@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jonas\\Source\\Repos\\dinTour\\dinTour\\dinTour.csproj": {}
+    "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\dinTour.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jonas\\Source\\Repos\\dinTour\\dinTour\\dinTour.csproj": {
+    "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\dinTour.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jonas\\Source\\Repos\\dinTour\\dinTour\\dinTour.csproj",
+        "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\dinTour.csproj",
         "projectName": "dinTour",
-        "projectPath": "C:\\Users\\Jonas\\Source\\Repos\\dinTour\\dinTour\\dinTour.csproj",
+        "projectPath": "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\dinTour.csproj",
         "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jonas\\Source\\Repos\\dinTour\\dinTour\\obj\\",
+        "outputPath": "C:\\Users\\Jonas\\source\\repos\\dinTour\\dinTour\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

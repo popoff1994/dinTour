@@ -9,7 +9,8 @@
         Count: 
         <input asp-for="@Model.Count" class="form-control"/>
         <div class="form-group">
-            <input type="checkbox" asp-for="Vip.ChampagneMenu"/>
+            <p>Ønsker du at tilvælge ChampagneMenu? (Bestående af en flaske Champagne)</p>
+            <input asp-for="ChampagneMenu" class="form-control"/>
         </div>
         <div class="form-group">
             <input type="submit" value="Create" class="btn btn-primary"/>

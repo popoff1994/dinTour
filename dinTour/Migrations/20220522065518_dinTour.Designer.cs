@@ -10,7 +10,7 @@ using dinTour.Models;
 namespace dinTour.Migrations
 {
     [DbContext(typeof(dinTourDbContext))]
-    [Migration("20220520103625_dinTour")]
+    [Migration("20220522065518_dinTour")]
     partial class dinTour
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,9 @@ namespace dinTour.Migrations
                     b.Property<string>("Beskrivelse")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("EventId")
                         .HasColumnType("int");
 
@@ -40,8 +43,8 @@ namespace dinTour.Migrations
                     b.Property<string>("Navn")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Varrighed")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("BegivenhedId");
 
@@ -153,6 +156,9 @@ namespace dinTour.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<bool>("ChampagneMenu")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
@@ -183,9 +189,6 @@ namespace dinTour.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<bool>("ChampagneMenu")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Menu")
                         .HasColumnType("nvarchar(max)");
@@ -227,7 +230,7 @@ namespace dinTour.Migrations
             modelBuilder.Entity("dinTour.Models.Tilkøb", b =>
                 {
                     b.HasOne("dinTour.Models.Deltager", "Deltager")
-                        .WithMany()
+                        .WithMany("Tilkøb")
                         .HasForeignKey("DeltagerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -246,6 +249,8 @@ namespace dinTour.Migrations
             modelBuilder.Entity("dinTour.Models.Deltager", b =>
                 {
                     b.Navigation("Bookning");
+
+                    b.Navigation("Tilkøb");
                 });
 
             modelBuilder.Entity("dinTour.Models.Event", b =>

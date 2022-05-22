@@ -60,8 +60,7 @@ namespace dinTour.Migrations
                     VIPId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pris = table.Column<int>(type: "int", nullable: false),
-                    Menu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ChampagneMenu = table.Column<bool>(type: "bit", nullable: false)
+                    Menu = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,7 +74,8 @@ namespace dinTour.Migrations
                     BegivenhedId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Navn = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Varrighed = table.Column<int>(type: "int", nullable: false),
+                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Beskrivelse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EventId = table.Column<int>(type: "int", nullable: true)
@@ -128,7 +128,8 @@ namespace dinTour.Migrations
                     DeltagerId = table.Column<int>(type: "int", nullable: false),
                     Count = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    VIPId = table.Column<int>(type: "int", nullable: false)
+                    VIPId = table.Column<int>(type: "int", nullable: false),
+                    ChampagneMenu = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
