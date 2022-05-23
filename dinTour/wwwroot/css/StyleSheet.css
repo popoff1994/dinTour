@@ -58,3 +58,10 @@ button.accept-policy {
 table {
     border-collapse: collapse;
 }
+.outlinetext {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.img {
+    height: 300px;
+    width: 450px;
+}

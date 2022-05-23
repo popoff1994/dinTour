@@ -2,11 +2,9 @@
 @model dinTour.Pages.Parkering.BookParkeringModel
 @{
 }
-<h1>Book Parkering</h1>
-
-<h1>Gennemfør bookning</h1>
+<h1 class="outlinetext" style="color:gray">Gennemfør bookning</h1>
 <div class="alert alert-danger">
-    <h5>Ønsker du at booke parkering: @Model.Parkering.ParkeringId</h5>
+    <h5 class="outlinetext">Ønsker du at booke parkeringplads nr: @Model.Parkering.ParkeringId</h5>
     <form method="post">
         <button type="submit" class="btn btn-danger">Yes</button>
         <a class="btn btn-primary" asp-page="/Parkering/GetParkering">No</a>

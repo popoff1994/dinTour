@@ -2,42 +2,42 @@
 @model dinTour.Pages.LogIn.CreateDeltagerModel
 @{
 }
-<h1>Create a new User</h1>
+<h1 class="outlinetext" style="color: gray">Create a new User</h1>
 
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div class="form-group">
-                <label asp-for="@Model.Name" class="control-label"></label>
+                <label asp-for="@Model.Name" class="control-label outlinetext" style="color: gray"></label>
                 <input asp-for="@Model.Name" class="form-control"/>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Tlf" class="control-label">Telefon(valgfri)</label>
+                <label asp-for="@Model.Tlf" style="color: gray" class="control-label outlinetext">Telefon(valgfri)</label>
                 <input asp-for="@Model.Tlf" class="form-control"/>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Email" class="control-label"></label>
+                <label asp-for="@Model.Email" style="color: gray" class="control-label outlinetext"></label>
                 <input asp-for="@Model.Email" class="form-control"/>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.UserName" class="control-label">Bruger Navn</label>
+                <label asp-for="@Model.UserName" style="color: gray" class="control-label outlinetext">Bruger Navn</label>
                 <input asp-for="@Model.UserName" class="form-control"/>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Password" class="control-label">Kodeord</label>
+                <label asp-for="@Model.Password" style="color: gray" class="control-label outlinetext">Kodeord</label>
                 <input asp-for="@Model.Password" class="form-control"/>
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary"/>
+                <input type="submit" value="Create" class="btn btn-outline-light"/>
             </div>
         </form>
     </div>
 </div>
 <div>
-    <p> Har du allerede en bruger? <a asp-page="/Login/LogInPage">Login her!</a></p>
+    <p style="color: gray" class="outlinetext"> Har du allerede en bruger? <a asp-page="/Login/LogInPage">Login her!</a></p>
 </div>
 <div>
     <p></p>
-    <a asp-page="/Index">Tilbage til startsiden</a>
+    <a class="outlinetext" asp-page="/Index">Tilbage til startsiden</a>
 </div>

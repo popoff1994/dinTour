@@ -428,9 +428,7 @@ C:\Users\anton\Documents\GitHub\dinTour\dinTour\obj\Debug\net5.0\dinTour.dll
 C:\Users\anton\Documents\GitHub\dinTour\dinTour\obj\Debug\net5.0\ref\dinTour.dll
 C:\Users\anton\Documents\GitHub\dinTour\dinTour\obj\Debug\net5.0\dinTour.pdb
 C:\Users\anton\Documents\GitHub\dinTour\dinTour\obj\Debug\net5.0\dinTour.genruntimeconfig.cache
-C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Forside.cshtml.g.cs
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\GetTilkøb.cshtml.g.cs
-C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetProgram.cshtml.g.cs
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\bin\Debug\net5.0\appsettings.json
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\bin\Debug\net5.0\dinTour.exe
