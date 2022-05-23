@@ -40,8 +40,7 @@ button.accept-policy {
 }
 
 .border1 {
-    border: 2px solid black;
-    border-bottom: 0px;
+    border-bottom: 3px solid #ffff00; 
 }
 
 .border2 {
