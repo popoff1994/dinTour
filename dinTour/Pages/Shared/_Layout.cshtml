@@ -25,14 +25,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Forside">ForsideTemp</a>
                         </li>
-                        @if (Context.User.Identity.Name != null)
+                        @if (Context.User.Identity.Name != null && Context.User.Identity.Name != "admin")
                         {
                             <li class="nav-item">
                              <a class="nav-link text-dark" asp-area="" asp-page="/Parkering/GetParkering">Book Parkering</a>
                             </li>
 
                         }
-                        @if (Context.User.Identity.Name != null)
+                        @if (Context.User.Identity.Name != null && Context.User.Identity.Name != "admin")
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Tilkøb/GetTilkøb">Bestil Tilkøb</a>
@@ -45,7 +45,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Parkering/ParkeringDeltager">Optaget Parkeringspladser</a>
                         </li>
                         }
-                        @if (Context.User.Identity.Name != null)
+                        @if (Context.User.Identity.Name != null && Context.User.Identity.Name != "admin")
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Tilkøb/DeltagerTilkøb">Dine tilkøb</a>

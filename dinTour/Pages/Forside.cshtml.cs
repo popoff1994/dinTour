@@ -11,7 +11,6 @@ namespace dinTour.Pages
     {
         public void OnGet()
         {
-            //OnGet? More like get some bitches, virgin 😎😎.
         }
     }
 }

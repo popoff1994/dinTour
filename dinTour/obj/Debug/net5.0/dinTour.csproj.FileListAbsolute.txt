@@ -574,3 +574,5 @@ C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\GetTilkøb.cshtml.g.cs
 C:\Users\Jonas\source\repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerTilkøb.cshtml.g.cs
 C:\Users\Jonas\source\repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\DeleteBegivenhed.cshtml.g.cs
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\DeleteBegivenhed.cshtml.g.cs
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerTilkøb.cshtml.g.cs

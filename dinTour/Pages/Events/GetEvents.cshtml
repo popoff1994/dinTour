@@ -3,7 +3,7 @@
 @{
 }
 
-<h3>Events</h3>
+<h1 style="color:gray">Events</h1>
 @if (HttpContext.User.Identity.Name.Equals("admin"))
 {
     <p>
@@ -12,7 +12,7 @@
 }
 <div class="container">
 <div class="row">
-    <div class="col-sm-4 shadow-lg bg-light">
+    <div class="col-sm-4 shadow-lg bg-light test2 border2">
         <h3>MadTelt</h3>
         @if (@Model.Begivenheder != null)
         {
@@ -45,7 +45,7 @@
     </div>
     
     
-    <div class="col-sm-4 shadow-lg bg-light">
+    <div class="col-sm-4 shadow-lg bg-light test2 border2">
         <h3>Tribune</h3>
         @if (@Model.Begivenheder != null)
         {
@@ -80,7 +80,7 @@
 
     
     
-    <div class="col-sm-4 shadow-lg bg-light">
+    <div class="col-sm-4 shadow-lg bg-light test2 border2">
         <h3>MusikTelt</h3>
         @if (@Model.Begivenheder != null)
         {
