@@ -10,7 +10,7 @@ using dinTour.Models;
 namespace dinTour.Migrations
 {
     [DbContext(typeof(dinTourDbContext))]
-    [Migration("20220522065518_dinTour")]
+    [Migration("20220523110135_dinTour")]
     partial class dinTour
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
