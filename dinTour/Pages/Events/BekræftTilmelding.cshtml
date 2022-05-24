@@ -1,0 +1,18 @@
+﻿@page "{id:int}"
+@using Microsoft.Extensions.Logging
+@model dinTour.Pages.Events.BekræftTilmeldingModel
+@{
+}
+<h1 class="outlinetext" style="color:gray">Gennemfør Tilmelding</h1>
+<div class="alert alert-info">
+    <h5 class="outlinetext">Hvor mange ønsker du at tilmelde til eventet?</h5>
+    <div class="form-group">
+        <label style="color: gray" asp-for="@Model.Event.AntalTilmeldte" class="control-label outlinetext"></label>
+        <input asp-for="@Model.Event.AntalTilmeldte" class="form-control"/>
+    </div>
+
+    <form method="post">
+        <button type="submit" class="btn btn-outline-light">Yes</button>
+        <a class="btn btn-danger" asp-page="/Events/TilmeldEvent">No</a>
+    </form>
+</div>

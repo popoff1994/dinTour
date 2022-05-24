@@ -10,7 +10,7 @@ namespace dinTour.Services
     {
         public List<Bookning> BookningList { get; set; }
 
-       public DBGService<Bookning> DbService { get; set; }
+        public DBGService<Bookning> DbService { get; set; }
 
        public BookningService(DBGService<Bookning> dbService)
        {

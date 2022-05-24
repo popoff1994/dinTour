@@ -563,10 +563,7 @@ C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.pdb
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\obj\Debug\net5.0\dinTour.genruntimeconfig.cache
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\BekræftTilkøb.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetEvents.cshtml.g.cs
-C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\GetProgram.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\OpretBegivenhed.cshtml.g.cs
-C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Forside.cshtml.g.cs
-C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Parkering\ParkeringDeltager.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\BekræftTilkøb.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\GetTilkøb.cshtml.g.cs
 C:\Users\Jonas\source\repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerTilkøb.cshtml.g.cs
@@ -574,3 +571,6 @@ C:\Users\Jonas\source\repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\DeleteBegivenhed.cshtml.g.cs
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerTilkøb.cshtml.g.cs
 C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerBestillinger.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\BekræftTilmelding.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\TilmeldEvent.cshtml.g.cs
+C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerBestillinger.cshtml.g.cs
