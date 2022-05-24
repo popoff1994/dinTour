@@ -3,7 +3,7 @@
 @{
 }
 <h1 class="outlinetext" style="color: gray">Forudbestil VIP</h1>
-<div class="alert alert-danger">
+<div class="alert alert-info">
     <h5>Ønsker du at bestille VIP menu @Model.Tilkøb.VIPId</h5>
     <form method="post">
         Count: 
@@ -13,9 +13,8 @@
             <input asp-for="ChampagneMenu" class="form-control"/>
         </div>
         <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary"/>
+            <input type="submit" value="Create" class="btn btn-outline-light"/>
         </div>
     </form>
- 
-    <a class="btn btn-primary" asp-page="/Tilkøb/GetTilkøb">No</a>
+    <a class="btn btn-outline-light" asp-page="/Tilkøb/GetTilkøb">No</a>
 </div>
