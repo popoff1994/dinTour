@@ -8,6 +8,23 @@ namespace dinTour.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Begivenheder",
+                columns: table => new
+                {
+                    BegivenhedId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Navn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Beskrivelse = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Begivenheder", x => x.BegivenhedId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Deltagere",
                 columns: table => new
                 {
@@ -22,21 +39,6 @@ namespace dinTour.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Deltagere", x => x.DeltagerId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Events",
-                columns: table => new
-                {
-                    EventId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Navn = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Events", x => x.EventId);
                 });
 
             migrationBuilder.CreateTable(
@@ -68,30 +70,6 @@ namespace dinTour.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Begivenheder",
-                columns: table => new
-                {
-                    BegivenhedId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Navn = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Beskrivelse = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EventId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Begivenheder", x => x.BegivenhedId);
-                    table.ForeignKey(
-                        name: "FK_Begivenheder_Events_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Events",
-                        principalColumn: "EventId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Booknings",
                 columns: table => new
                 {
@@ -99,6 +77,7 @@ namespace dinTour.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DeltagerId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParkeringId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -126,6 +105,7 @@ namespace dinTour.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DeltagerId = table.Column<int>(type: "int", nullable: false),
+                    Menu = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Count = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     VIPId = table.Column<int>(type: "int", nullable: false),
@@ -147,11 +127,6 @@ namespace dinTour.Migrations
                         principalColumn: "VIPId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Begivenheder_EventId",
-                table: "Begivenheder",
-                column: "EventId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Booknings_DeltagerId",
@@ -184,9 +159,6 @@ namespace dinTour.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tilkøb");
-
-            migrationBuilder.DropTable(
-                name: "Events");
 
             migrationBuilder.DropTable(
                 name: "Parkering");

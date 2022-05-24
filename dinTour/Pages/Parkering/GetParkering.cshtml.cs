@@ -14,8 +14,6 @@ namespace dinTour.Pages.Parkering
         private ParkeringService _parkeringService;
         [BindProperty]
         public List<Models.Parkering> parkeringspladser { get; set; }
-        [BindProperty]
-        public bool Ocupied { get; set; }
 
 
         public GetParkeringModel(ParkeringService parkeringService)

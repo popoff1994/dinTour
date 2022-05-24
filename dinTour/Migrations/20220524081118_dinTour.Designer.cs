@@ -10,7 +10,7 @@ using dinTour.Models;
 namespace dinTour.Migrations
 {
     [DbContext(typeof(dinTourDbContext))]
-    [Migration("20220523110135_dinTour")]
+    [Migration("20220524081118_dinTour")]
     partial class dinTour
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,9 +34,6 @@ namespace dinTour.Migrations
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("EventId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
@@ -47,8 +44,6 @@ namespace dinTour.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("BegivenhedId");
-
-                    b.HasIndex("EventId");
 
                     b.ToTable("Begivenheder");
                 });
@@ -65,6 +60,9 @@ namespace dinTour.Migrations
 
                     b.Property<int>("DeltagerId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ParkeringId")
                         .HasColumnType("int");
@@ -110,27 +108,6 @@ namespace dinTour.Migrations
                     b.ToTable("Deltagere");
                 });
 
-            modelBuilder.Entity("dinTour.Models.Event", b =>
-                {
-                    b.Property<int>("EventId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Navn")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("EventId");
-
-                    b.ToTable("Events");
-                });
-
             modelBuilder.Entity("dinTour.Models.Parkering", b =>
                 {
                     b.Property<int>("ParkeringId")
@@ -168,6 +145,9 @@ namespace dinTour.Migrations
                     b.Property<int>("DeltagerId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Menu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -199,13 +179,6 @@ namespace dinTour.Migrations
                     b.HasKey("VIPId");
 
                     b.ToTable("VIPs");
-                });
-
-            modelBuilder.Entity("dinTour.Models.Begivenhed", b =>
-                {
-                    b.HasOne("dinTour.Models.Event", null)
-                        .WithMany("Begivenheder")
-                        .HasForeignKey("EventId");
                 });
 
             modelBuilder.Entity("dinTour.Models.Bookning", b =>
@@ -251,11 +224,6 @@ namespace dinTour.Migrations
                     b.Navigation("Bookning");
 
                     b.Navigation("Tilkøb");
-                });
-
-            modelBuilder.Entity("dinTour.Models.Event", b =>
-                {
-                    b.Navigation("Begivenheder");
                 });
 #pragma warning restore 612, 618
         }

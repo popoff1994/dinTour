@@ -49,6 +49,7 @@ namespace dinTour.Pages.Parkering
             ParkeringBy.DeltagerId = Deltager.DeltagerId;
             ParkeringBy.ParkeringId = Parkering.ParkeringId;
             ParkeringBy.Date = DateTime.Now;
+            ParkeringBy.Name = Deltager.Name;
             _bookningService.AddBookning(ParkeringBy);
             ParkeringService.BookParkering(Parkering);
             return RedirectToPage("/Parkering/GetParkering");

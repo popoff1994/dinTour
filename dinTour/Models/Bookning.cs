@@ -19,7 +19,7 @@ namespace dinTour.Models
         [Required]
         public int DeltagerId { get; set; }
 
-        
+        public string Name { get; set; }
 
         public Deltager Deltager { get; set; }
         [Required]

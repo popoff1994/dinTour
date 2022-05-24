@@ -54,6 +54,7 @@ namespace dinTour.Pages.Tilkøb
             Tilkøb.Count = Count;
             Tilkøb.Name = Deltager.Name;
             Tilkøb.ChampagneMenu = ChampagneMenu;
+            Tilkøb.Menu = Vip.Menu;
             _tilkøbService.AddTilkøb(Tilkøb);
             return RedirectToPage("/Tilkøb/GetTilkøb");
         }

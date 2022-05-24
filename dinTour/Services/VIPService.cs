@@ -15,13 +15,13 @@ namespace dinTour.Services
 
         public VIPService(DBGService<VIP> dbService)
         {
-            VIPMenu = MockVIP.GetVipMenu().ToList();
+            //VIPMenu = MockVIP.GetVipMenu().ToList();
             DBService = dbService;
-            //VIPMenu = DBService.GetObjectsAsync().Result.ToList();
-            foreach (var vip in VIPMenu)
-            {
-                dbService.AddObjectAsync(vip);
-            }
+            VIPMenu = DBService.GetObjectsAsync().Result.ToList();
+            //foreach (var vip in VIPMenu)
+            //{
+            //    dbService.AddObjectAsync(vip);
+            //}
         }
         public List<VIP> GetAllVIPS()
         {
