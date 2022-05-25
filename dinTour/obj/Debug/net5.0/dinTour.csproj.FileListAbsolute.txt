@@ -574,3 +574,5 @@ C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\BekræftTilmelding.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\TilmeldEvent.cshtml.g.cs
 C:\Users\Jonas\Source\Repos\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Tilkøb\DeltagerBestillinger.cshtml.g.cs
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\BekræftTilmelding.cshtml.g.cs
+C:\Users\Jonas\OneDrive\Skrivebord\Github\dinTour\dinTour\obj\Debug\net5.0\Razor\Pages\Events\TilmeldEvent.cshtml.g.cs

@@ -21,10 +21,10 @@ namespace dinTour.Services
             //Deltager = MockDeltager.GetMockDeltager();
             DbService = dbService;
             Deltager = DbService.GetObjectsAsync().Result.ToList();
-            foreach (var deltager in Deltager)
-            {
-                dbService.AddObjectAsync(deltager);
-            }
+            //foreach (var deltager in Deltager)
+            //{
+            //    dbService.AddObjectAsync(deltager);
+            //}
         }
 
         public async Task AddUser(Deltager user)
