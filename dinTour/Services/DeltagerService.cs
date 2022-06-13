@@ -27,6 +27,11 @@ namespace dinTour.Services
             //}
         }
 
+        public List<Deltager> GetUsers()
+        {
+            return Deltager;
+        }
+
         public async Task AddUser(Deltager user)
         {
             Deltager.Add(user);
@@ -48,6 +53,7 @@ namespace dinTour.Services
             //return DbService.GetObjectByIdAsync(username).Result;
             return Deltager.Find(user => user.UserName == username);
         }
+
     }
 
 

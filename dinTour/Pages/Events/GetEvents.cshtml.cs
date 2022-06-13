@@ -15,7 +15,6 @@ namespace dinTour.Pages.Events
     {
         public List<Begivenhed> Begivenheder { get; set; }
         
-        public DeltagerService DeltagerService { get; set; }
 
         public BegivenhedService _begivenhedService;
 

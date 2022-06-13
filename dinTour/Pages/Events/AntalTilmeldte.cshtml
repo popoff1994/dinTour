@@ -1,0 +1,68 @@
+﻿@page
+@model dinTour.Pages.Events.AntalTilmeldteModel
+@{
+}
+<h1 class="outlinetext" style="color: gray">Antal Tilmeldte @Model.Deltagere.Count</h1>
+
+@if (@Model.Deltagere.Count < 100)
+{
+    <h2 class="outlinetext" style="color: red">Bemærk er der under 100 tilmeldte. Vil eventet ikke blive afholdt.</h2>
+}
+<h2 class="outlinetext" style="color:gray">Bemærk der kun er plads til 500 deltagere, og dermed kan der ikke tilmeldes mere end 500 deltagere.</h2>
+<table class="table table-bordered" width="60%">
+    <col style="width: 7%">
+    <col style="width: 74%">
+    <col style="width: 10%">
+    <thead>
+        <tr class="btn-secondary active">
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div><h5>Bruger Id</h5></div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Navn</h5>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Tlf</h5>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Email</h5>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (@Model.Deltagere != null)
+        {
+            foreach (var item in Model.Deltagere)
+            {
+                <tr class="btn-secondary">
+                    <td>
+                        @item.DeltagerId
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Tlf
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -31,6 +31,8 @@ namespace dinTour.Pages.LogIn
         [BindProperty]
         public string Email { get; set; }
 
+        public List<Deltager> Deltagere { get; set; }
+
 
 
         public CreateDeltagerModel(DeltagerService userService)
@@ -41,6 +43,7 @@ namespace dinTour.Pages.LogIn
 
         public void OnGet()
         {
+            Deltagere = _deltagerService.GetUsers();
         }
 
         public IActionResult OnPost()
