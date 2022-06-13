@@ -4,6 +4,14 @@
 }
 
 <h1 class="outlinetext" style="color:gray">Begivenheder</h1>
+<h3 class="outlinetext" style="color: yellow">Antal tilmeldte til eventet @Model.Deltagere.Count</h3>
+<p class="outlinetext" style="color:yellow">Eventet tilader op til 500 deltager.</p>
+@if (@Model.Deltagere.Count < 100)
+{
+    <h2 class="outlinetext" style="color: red">Bemærk er der under 100 tilmeldte. Vil eventet blive aflyst!</h2>
+}
+
+
 @if (HttpContext.User.Identity.Name.Equals("admin"))
 {
     <p>
@@ -11,108 +19,109 @@
     </p>
 }
 <div class="container">
-<div class="row">
-    <div class="col-sm-4 shadow-lg bg-light test2 border2">
-        <h3>MadTelt</h3>
-        @if (@Model.Begivenheder != null)
-        {
-            foreach (var item in Model.Begivenheder)
+    <div class="row">
+        <div class="col-sm-4 shadow-lg bg-light test2 border2">
+            <h3>MadTelt</h3>
+            @if (@Model.Begivenheder != null)
             {
-                if (item.Location == "MadTelt")
+                foreach (var item in Model.Begivenheder)
                 {
-                    <div class="card shadow mb-2 mt-1 ym-2"></div>
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h4>Navn på begivenhed: @item.Navn</h4>
-                            <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
-                            <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
-                        </div>
-                        <div class="card-text">
-                            <h4>Beskrivelse:</h4>
-                            <p style="font-size: 25px">@item.Beskrivelse</p>
-                        </div>
-                        @if (HttpContext.User.Identity.Name.Equals("admin"))
-                        {
-                            <div class="card-footer">
-                                <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
+                    if (item.Location == "MadTelt")
+                    {
+                        <div class="card shadow mb-2 mt-1 ym-2"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>Navn på begivenhed: @item.Navn</h4>
+                                <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
+                                <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
                             </div>
-                        }
-                    </div>
+                            <div class="card-text">
+                                <h4>Beskrivelse:</h4>
+                                <p style="font-size: 25px">@item.Beskrivelse</p>
+                            </div>
+                            @if (HttpContext.User.Identity.Name.Equals("admin"))
+                            {
+                                <div class="card-footer">
+                                    <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
+                                </div>
+                            }
+                        </div>
+                    }
+
                 }
 
             }
+        </div>
 
-        }
-    </div>
-    
-    
-    <div class="col-sm-4 shadow-lg bg-light test2 border2">
-        <h3>Tribune</h3>
-        @if (@Model.Begivenheder != null)
-        {
-            foreach (var item in Model.Begivenheder)
+
+        <div class="col-sm-4 shadow-lg bg-light test2 border2">
+            <h3>Tribune</h3>
+            @if (@Model.Begivenheder != null)
             {
-                if (item.Location == "Tribune")
+                foreach (var item in Model.Begivenheder)
                 {
-                    <div class="card shadow mb-2 mt-1 ym-2"></div>
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h4>Navn på begivenhed: @item.Navn</h4>
-                            <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
-                            <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
-                        </div>
-                        <div class="card-text">
-                            <h4>Beskrivelse:</h4>
-                            <p style="font-size: 25px">@item.Beskrivelse</p>
-                        </div>
-                        @if (HttpContext.User.Identity.Name.Equals("admin"))
-                        {
-                            <div class="card-footer">
-                                <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
+                    if (item.Location == "Tribune")
+                    {
+                        <div class="card shadow mb-2 mt-1 ym-2"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>Navn på begivenhed: @item.Navn</h4>
+                                <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
+                                <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
                             </div>
-                        }
-                    </div>
+                            <div class="card-text">
+                                <h4>Beskrivelse:</h4>
+                                <p style="font-size: 25px">@item.Beskrivelse</p>
+                            </div>
+                            @if (HttpContext.User.Identity.Name.Equals("admin"))
+                            {
+                                <div class="card-footer">
+                                    <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
+                                </div>
+                            }
+                        </div>
+                    }
+
                 }
 
             }
+        </div>
 
-        }
-    </div>
-    
 
-    
-    
-    <div class="col-sm-4 shadow-lg bg-light test2 border2">
-        <h3>MusikTelt</h3>
-        @if (@Model.Begivenheder != null)
-        {
-            foreach (var item in Model.Begivenheder)
+
+
+        <div class="col-sm-4 shadow-lg bg-light test2 border2">
+            <h3>MusikTelt</h3>
+            @if (@Model.Begivenheder != null)
             {
-                if (item.Location == "MusikTelt")
+                foreach (var item in Model.Begivenheder)
                 {
-                    <div class="card shadow mb-2 mt-1 ym-2"></div>
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h4>Navn på begivenhed: @item.Navn</h4>
+                    if (item.Location == "MusikTelt")
+                    {
+                        <div class="card shadow mb-2 mt-1 ym-2"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>Navn på begivenhed: @item.Navn</h4>
 
-                            <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
-                            <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
-                        </div>
-                        <div class="card-text">
-                            <h4>Beskrivelse:</h4>
-                            <p style="font-size: 25px">@item.Beskrivelse</p>
-                        </div>
-                        @if (HttpContext.User.Identity.Name.Equals("admin"))
-                        {
-                            <div class="card-footer">
-                                <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
+                                <h4>Begivenheden Starter kl: @item.StartTime.TimeOfDay</h4>
+                                <h4>Begivenheden Slutter kl: @item.EndTime.TimeOfDay</h4>
                             </div>
-                        }
-                    </div>
+                            <div class="card-text">
+                                <h4>Beskrivelse:</h4>
+                                <p style="font-size: 25px">@item.Beskrivelse</p>
+                            </div>
+                            @if (HttpContext.User.Identity.Name.Equals("admin"))
+                            {
+                                <div class="card-footer">
+                                    <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteBegivenhed" asp-route-id="@item.BegivenhedId"><i class="fa fa-trash"></i></a>
+                                </div>
+                            }
+                        </div>
+                    }
+
                 }
 
             }
-
-        }
+        </div>
     </div>
-</div></div>
+</div>
