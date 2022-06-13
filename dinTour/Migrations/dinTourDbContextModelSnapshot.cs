@@ -106,24 +106,6 @@ namespace dinTour.Migrations
                     b.ToTable("Deltagere");
                 });
 
-            modelBuilder.Entity("dinTour.Models.Event", b =>
-                {
-                    b.Property<int>("EventId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("AntalTilmeldte")
-                        .HasColumnType("int");
-
-                    b.Property<string>("EventName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EventId");
-
-                    b.ToTable("Events");
-                });
-
             modelBuilder.Entity("dinTour.Models.Parkering", b =>
                 {
                     b.Property<int>("ParkeringId")

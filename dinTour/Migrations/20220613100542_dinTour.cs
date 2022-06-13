@@ -42,20 +42,6 @@ namespace dinTour.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Events",
-                columns: table => new
-                {
-                    EventId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EventName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AntalTilmeldte = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Events", x => x.EventId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Parkering",
                 columns: table => new
                 {
@@ -170,9 +156,6 @@ namespace dinTour.Migrations
 
             migrationBuilder.DropTable(
                 name: "Booknings");
-
-            migrationBuilder.DropTable(
-                name: "Events");
 
             migrationBuilder.DropTable(
                 name: "Tilkøb");

@@ -51,7 +51,7 @@
                         @if (Context.User.Identity.Name != null && Context.User.Identity.Name != "admin")
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Tilkøb/DeltagerTilkøb">Dine tilkøb</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Tilkøb/DeltagerTilkøb">Dine Tilkøb/Bookning</a>
                             </li>
 
                         }
@@ -62,7 +62,7 @@
                         if (Context.User.Identity.Name == null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/Login/CreateDeltager">Tilmeld event</a>
+                                <a class="nav-link" asp-area="" asp-page="/Login/CreateDeltager">Tilmeld Event</a>
                             </li>
                         }
 

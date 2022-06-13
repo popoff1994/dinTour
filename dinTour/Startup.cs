@@ -36,11 +36,9 @@ namespace dinTour
             services.AddSingleton<BegivenhedService, BegivenhedService>();
             services.AddSingleton<BookningService, BookningService>();
             services.AddSingleton<VIPService, VIPService>();
-            services.AddSingleton<EventService, EventService>();
             services.AddSingleton<TilkøbService, TilkøbService>();
             services.AddTransient<DBGService<Parkering>, DBGService<Parkering>>();
             services.AddTransient<DBGService<VIP>, DBGService<VIP>>();
-            services.AddTransient<DBGService<Event>, DBGService<Event>>();
             //services.AddTransient<DBGService<Deltager>, DBGService<Deltager>>();
             services.AddTransient<DBGService<Begivenhed>, DBGService<Begivenhed>>();
             services.AddTransient<DBGService<Bookning>, DBGService<Bookning>>();
